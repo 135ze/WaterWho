@@ -1,0 +1,11 @@
+.container {
+    background-color: black;
+    opacity: 0.72;
+    padding: 12px 12px 12px 30px;
+}
+
+.header{
+    font-size: 2rem;
+    color: white;
+    margin: 0px;
+}
