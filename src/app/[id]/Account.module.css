@@ -1,0 +1,21 @@
+.accountContainer {
+    margin: 30px;
+}
+.accountHeader {
+    font-size: clamp(18px, 2vw, 30px);
+    font-weight: 600;
+}
+.accountButton {
+    font-size: clamp(10px, 1vw,16px);
+    font-weight: 300;
+    font-family: 'Jost', sans-serif;
+    padding: 10px 15px;
+    background-color: #437FC5;
+    color: white;
+    outline: 0;
+    border: 0; 
+    margin-right: clamp(10px, 2vw, 15px);
+}
+.accountButtonsContainer {
+    display: flex;
+}
