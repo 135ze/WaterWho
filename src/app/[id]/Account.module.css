@@ -15,7 +15,14 @@
     outline: 0;
     border: 0; 
     margin-right: clamp(10px, 2vw, 15px);
+    cursor: pointer
+}
+.accountButton:hover {
+    background-color: #3E72B0;
 }
 .accountButtonsContainer {
     display: flex;
+}
+.activeButton {
+    background-color: #2F527B;
 }
