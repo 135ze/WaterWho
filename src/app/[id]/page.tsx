@@ -7,7 +7,9 @@ import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.css";
 import { DashboardMenu } from "../components/dashboardmenu"
-export default function Home() {
+
+
+export default function MainPage({ params }: { params: { id: string } }) {
   noStore();
 
   const [activeButton, setActiveButton] = useState<string>("Dashboard");

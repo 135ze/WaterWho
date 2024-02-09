@@ -14,11 +14,60 @@ datasource db {
     relationMode = "prisma"
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model UserProfile{
+    id Int @id @default(autoincrement())
+    name String?
+    displayName String?
+    uniYear Int?
+    uniTerm Int?
+    genderIdentity String?
+    genderInterested String?
+    bday DateTime?
+    height String?
+    term1 String?
+    term2 String?
+    term3 String?
+    hometown String?
 
     @@index([name])
+}
+
+model Documents{
+    documentID Int @id @default(autoincrement())
+    user Int
+    documentType String
+    link String
+}
+
+model Images{
+    typeOfImage String
+    imageLink String
+    imageOwner Int
+    @@unique([typeOfImage, imageLink, imageOwner])
+}
+
+model Applications{
+    applicant Int
+    receiver Int
+    resume String
+    coverLetter String
+    lor String
+    applicationStatus String
+    @@unique([applicant, receiver])
+}
+
+model Relationship{
+    personOne Int
+    personTwo Int
+    rankFwd Int
+    rankBwd Int
+    status String
+    @@unique([personOne, personTwo])
+}
+
+model Socials{
+    userId Int
+    socialType String
+    socialLink String
+    @@unique([userId, socialType])
 }

@@ -51,3 +51,50 @@ rejected applications
 - interview status (was it agreed upon?)
 - ranking after
 - date of expiry
+
+# Base Schema:
+
+UserProfile: PK: (ID)
+ID
+Name
+Year
+Term
+Program
+Gender Identity
+Gender Interested
+Age
+Height
+Sequence (next 3 terms)
+Hometown
+WorkHistory ??? (don't understand this field)
+
+Documents: PK: (documentID)
+documentID
+user
+documentType
+Link
+
+Images: PK: none
+imageLink
+TypeOfImage
+User
+
+Applications: PK: (Applicant + Receiver)
+Applicant
+Receiver
+Resume
+CoverLetter
+LOR
+ApplicationStatus
+
+Relationship: PK: (personOne, personTwo)
+personOne
+personTwo
+rankFwd
+rankBwd
+status 
+
+Socials: PK: (userId + socialType)
+userid
+socialType
+socialLink
