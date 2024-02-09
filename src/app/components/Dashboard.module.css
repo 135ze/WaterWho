@@ -5,7 +5,7 @@
 .dmContainer {
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #437FC5;
+    background-color: var(--body-color-primary);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -18,9 +18,9 @@
     font-weight: 300;
     font-family: 'Jost', sans-serif;
     padding: 10px 15px;
-    background-color: #67A3EB;
+    background-color: var(--round-button-inactive-background);
     border-radius: 15px;
-    color: white;
+    color: var(--round-button-inactive-text);
     outline: 0;
     border: 0; 
     margin-right: clamp(10px, 2vw, 15px);
@@ -28,16 +28,16 @@
 }
 
 .dmNumMatchesText {
-    color: white;
+    color: var(--text-color-secondary);
     margin-bottom: 0px;
 }
 
 .dmWhiteButton {
-    background-color: white;
-    color: black
+    background-color: var(--round-button-active-background);
+    color: var(--round-button-active-text);
 }
 
 .dmBody {
-    background-color: #437FC5;
+    background-color: var(--body-color-primary);
     height: calc(100% - 140px);
 }
