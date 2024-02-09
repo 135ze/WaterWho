@@ -14,58 +14,59 @@ datasource db {
     relationMode = "prisma"
 }
 
-model UserProfile{
-    id Int @id @default(autoincrement())
-    name String?
-    displayName String?
-    uniYear Int?
-    uniTerm Int?
+model UserProfile {
+    userID Int @id @default(autoincrement())
+    firstName String
+    lastName String
+    currentYear Int
+    currentTerm String
     genderIdentity String?
-    genderInterested String?
-    bday DateTime?
-    height String?
-    term1 String?
-    term2 String?
-    term3 String?
-    hometown String?
-
-    @@index([name])
+    sexuality String?
+    dateOfBirth DateTime
+    height Int
+    nextTerm1 String
+    nextTerm2 String
+    nextTerm3 String
+    cityOfResidence String?
+    provinceOfResidence String
+    accountCreatedDate DateTime
+    @@index([userID])
 }
 
-model Documents{
+model Documents {
     documentID Int @id @default(autoincrement())
-    user Int
+    userID Int
     documentType String
     link String
 }
 
-model Images{
+model Images {
+    imageOwnerID Int
     typeOfImage String
     imageLink String
-    imageOwner Int
-    @@unique([typeOfImage, imageLink, imageOwner])
+    @@unique([imageOwnerID, typeOfImage, imageLink])
 }
 
-model Applications{
-    applicant Int
-    receiver Int
+model Applications {
+    applicantID Int
+    receiverID Int
     resume String
     coverLetter String
-    lor String
+    letterOfRecommendation String
     applicationStatus String
-    @@unique([applicant, receiver])
+    @@unique([applicantID, receiverID])
 }
 
-model Relationship{
-    personOne Int
-    personTwo Int
+model Relationship {
+    userOneID Int
+    userTwoID Int
     rankFwd Int
     rankBwd Int
     status String
-    @@unique([personOne, personTwo])
+    @@unique([userOneID, userTwoID])
 }
 
-model Socials{
+model Socials {
     userId Int
     socialType String
     socialLink String
