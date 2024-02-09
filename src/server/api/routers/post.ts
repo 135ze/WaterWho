@@ -9,7 +9,7 @@ export const postRouter = createTRPCRouter({
     .query(({ ctx, input }) => {
       return {
         greeting: `Hello ${input.text}`,
-        
+
       };
     }),
-});
+}); 
