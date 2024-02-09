@@ -6,7 +6,7 @@ import { Navbar } from "../components/navbar";
 import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.css";
-
+import { DashboardMenu } from "../components/dashboardmenu"
 export default function Home() {
   noStore();
 
@@ -66,7 +66,7 @@ export default function Home() {
         </div>
         {activeButton === "Dashboard" && (
           <div>
-            <p>Dashboard Content HERE (TODO)</p>
+          <DashboardMenu></DashboardMenu>
           </div>
         )}
         {activeButton === "Interviews" && (
