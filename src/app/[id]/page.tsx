@@ -17,7 +17,6 @@ export default function MainPage({ params }: { params: { id: string } }) {
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
   };
-  api.profile.createProfile.useMutation().mutate({userID: null, name: ""})
   return (
     <div>
       <Navbar></Navbar>
