@@ -1,11 +1,22 @@
 
 html,
 body {
-
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --square-button-blue-inactive: #437FC5;
+  --square-button-blue-active: #2F527B;
+  --square-button-blue-hover: #3E72B0;
+  --square-button-blue-text-color: white; 
+  --navbar-background-color: rgba(0, 0, 0, 0.72);
+  --text-color-secondary: white;
+  --text-color-primary: black;
+  --body-color-primary: #437FC5;
+  --round-button-active-background: white;
+  --round-button-active-text: black;
+  --round-button-inactive-background: #67A3EB;
+  --round-button-inactive-text: white;
 }
 
 a {
