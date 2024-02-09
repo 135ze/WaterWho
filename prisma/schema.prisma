@@ -15,11 +15,10 @@ datasource db {
 }
 
 model UserProfile {
-    userID Int @id @default(autoincrement())
+    userID Int @id 
     firstName String
     lastName String
-    currentYear Int
-    currentTerm String
+    projectedGraduationDate DateTime
     genderIdentity String?
     sexuality String?
     dateOfBirth DateTime
