@@ -14,6 +14,20 @@ datasource db {
     relationMode = "prisma"
 }
 
+enum RelationshipStatus {
+    None
+    Pending
+    Situationship
+    Taken
+}
+
+enum ApplicationStatus {
+    None
+    Pending
+    Ranked
+    Completed
+}
+
 model UserProfile {
     userID Int @id @default(autoincrement())
     firstName String
@@ -53,7 +67,7 @@ model Applications {
     resume String
     coverLetter String
     letterOfRecommendation String
-    applicationStatus String
+    applicationStatus ApplicationStatus
     @@unique([applicantID, receiverID])
 }
 
