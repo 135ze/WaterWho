@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey="pk_test_YmV0dGVyLXRpZ2VyLTc4LmNsZXJrLmFjY291bnRzLmRldiQ">
     <html lang="en">
       <body className={jost.className}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
