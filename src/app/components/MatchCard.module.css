@@ -1,0 +1,47 @@
+.cardContainer {
+    background-color: var(--match-card-background);
+    height: 22em;
+    width: 15em;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.cardImage img {
+    max-width: 100%;
+    height: auto;
+    border: 20px solid var(--text-color-secondary);
+    border-radius: 7px;
+}
+
+.cardPrimaryLine {
+    color: var(--text-color-primary);
+    margin: 5px 0px 5px 0px;
+    font-size: 1.2em;
+}
+
+.cardSecondaryLine {
+    color: var(--text-color-primary);
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.cardViewProfileButton {
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Jost', sans-serif;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 5px;
+    background-color: var(--round-button-inactive-background);
+    color: var(--round-button-inactive-text);
+    outline: 0;
+    border: 0; 
+    cursor: pointer
+}
