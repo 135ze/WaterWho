@@ -1,6 +1,6 @@
 
 .dm {
-    height: calc(100vh - 255px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
+    height: calc(100vh - 255px - 50px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
 }
 .dmContainer {
     margin-top: 20px;
@@ -39,7 +39,7 @@
 
 .dmBody {
     background-color: var(--body-color-primary);
-    height: calc(100% - 140px);
+    height: calc(100% - 106px);
     padding: 20px;
 }
 .dmMatchesGrid{
