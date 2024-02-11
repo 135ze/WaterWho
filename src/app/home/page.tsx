@@ -7,6 +7,7 @@ import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.scss";
 import { DashboardMenu } from "../components/dashboardmenu";
+import { Menu } from "../components/menu"
 
 export default function MainPage({ params }: { params: { id: string } }) {
   noStore();
@@ -19,6 +20,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
   return (
     <div>
       <Navbar></Navbar>
+      <Menu></Menu>
       <div className={styles.accountContainer}>
         <h1 className={styles.accountHeader}>Welcome back, John!</h1>
         {/* Add in user name later based on login*/}

@@ -1,4 +1,11 @@
 
+/* ~/styles/globals.css */
+
+/* Import Bootstrap styles */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Add your custom styles below */
+
 html,
 body {
   padding: 0;
@@ -19,7 +26,9 @@ body {
   --round-button-inactive-text: white;
   --round-button-hover: #2F527B;
   --match-card-background: #D9D9D9;
-
+  --menu-background:  #D9D9D9;
+  --menu-tab:  #437FC5;
+  --dark-blue-text: #2F527B;
 }
 
 a {
@@ -55,5 +64,21 @@ a {
 
 .btn-secondary:hover {
   border-color: var(--round-button-inactive-background);
+}
+
+.hover {
+  cursor: pointer
+}
+
+.accordion {
+  --bs-accordion-bg:var(--menu-background);
+  --bs-accordion-active-bg: var(--menu-background);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.1rem var(--menu-tab);
+  width: clamp(150px, 25vw, 250px);
+  --bs-accordion-border-color: var(--menu-background);
+}
+
+.text-primary {
+  color: var(--dark-blue-text) !important;
 }
 
