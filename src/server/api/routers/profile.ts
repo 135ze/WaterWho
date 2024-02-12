@@ -6,7 +6,7 @@ import { retryDelay } from "node_modules/@trpc/client/dist/internals/retryDelay"
 
 export const profileRouter = createTRPCRouter({
 
-    createProfile: privateProcedure
+    upsertProfile: privateProcedure
     .input(z.object({
       userID: z.number(), 
       firstName: z.string(),
