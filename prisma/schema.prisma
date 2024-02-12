@@ -19,14 +19,15 @@ model UserProfile {
     firstName String
     lastName String
     projectedGraduationDate DateTime
-    genderIdentity String?
-    sexuality String?
+    genderIdentity String
+    sexuality String
+    preferredGender String
     dateOfBirth DateTime
     height Int
     nextTerm1 String
     nextTerm2 String
     nextTerm3 String
-    cityOfResidence String?
+    cityOfResidence String
     provinceOfResidence String
     accountCreatedDate DateTime
     @@index([userID])
@@ -61,7 +62,7 @@ model Relationship {
     userTwoID Int
     rankFwd Int
     rankBwd Int
-    status String
+    relationshipStatus String
     @@unique([userOneID, userTwoID])
 }
 
