@@ -14,11 +14,57 @@ datasource db {
     relationMode = "prisma"
 }
 
+enum Mbti {
+    INTJ
+    INTP
+    ENTJ
+    ENTP
+    INFJ
+    INFP
+    ENFJ
+    ENFP
+    ISTJ
+    ISFJ
+    ESTJ
+    ESFJ
+    ISTP
+    ISFP
+    ESTP
+    ESFP
+}
+
+enum RelationshipStatus {
+    None
+    Pending
+    Dating
+}
+
+enum ApplicationStatus {
+    None
+    Pending
+    Rejected
+    Accepted
+}
+
+enum ImageType {
+    PDF 
+    PNG 
+    Other
+}
+
+enum SocialType {
+    Instagram
+    Facebook
+    Github
+    Discord
+}
+
 model UserProfile {
     userID Int @id 
     firstName String
     lastName String
     projectedGraduationDate DateTime
+    mbti Mbti
     genderIdentity String
     sexuality String
     preferredGender String
@@ -36,15 +82,14 @@ model UserProfile {
 model Documents {
     documentID Int @id @default(autoincrement())
     userID Int
-    documentType String
     link String
 }
 
 model Images {
     imageOwnerID Int
-    typeOfImage String
+    imageType ImageType
     imageLink String
-    @@unique([imageOwnerID, typeOfImage, imageLink])
+    @@unique([imageOwnerID, imageType, imageLink])
 }
 
 model Applications {
@@ -53,22 +98,31 @@ model Applications {
     resume String
     coverLetter String
     letterOfRecommendation String
-    applicationStatus String
+    applicationStatus ApplicationStatus @default(None)
+    rankFoward Int
+    rankBackward Int 
     @@unique([applicantID, receiverID])
 }
 
 model Relationship {
     userOneID Int
     userTwoID Int
-    rankFwd Int
-    rankBwd Int
-    relationshipStatus String
+    relationshipStatus RelationshipStatus @default(None)
     @@unique([userOneID, userTwoID])
 }
 
 model Socials {
     userId Int
-    socialType String
+    socialType SocialType
     socialLink String
     @@unique([userId, socialType])
+}
+
+model Notifications {
+    receiverID Int
+    notificationID Int @id @default(autoincrement())
+    title String
+    message String 
+    timeCreated DateTime
+    status Boolean
 }

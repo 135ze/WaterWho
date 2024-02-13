@@ -70,9 +70,9 @@ export const profileRouter = createTRPCRouter({
     getProfile: privateProcedure
     .input(z.object({userID: z.number()}))
     .query(async ({ctx, input}) => {
-      const ret = await ctx.db.userProfile.findFirstOrThrow (
-        { where: { userID: input.userID }} 
-      )
+      const ret = await ctx.db.userProfile.findFirstOrThrow ({ 
+        where: { userID: input.userID }
+      })
       return ret;
     }),
 });
