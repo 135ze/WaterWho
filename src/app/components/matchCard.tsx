@@ -1,4 +1,4 @@
-import styles from "./MatchCard.module.css";
+import styles from "./MatchCard.module.scss";
 /** To Do: likely will have to change this structure depending on what we choose to pass in from API call*/
 interface MatchCardProps {
     id: number;

@@ -1,4 +1,4 @@
-import styles from "./Dashboard.module.css";
+import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
 export function DashboardMenu() {

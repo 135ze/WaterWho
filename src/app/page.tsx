@@ -5,7 +5,7 @@ import Link from "next/link";
 import {Navbar} from "./components/navbar"
 
 import { api } from "~/trpc/react";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { SignIn,  useUser } from "@clerk/nextjs";
 
 export default function Home() {
