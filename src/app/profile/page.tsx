@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      this is the user's profile
+      this is the users profile
     </div>
   );
 }

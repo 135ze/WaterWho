@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      this is the user's documents
+      this is the users documents
     </div>
   );
 }
