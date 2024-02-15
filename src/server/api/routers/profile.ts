@@ -4,6 +4,11 @@ import { createTRPCRouter, privateProcedure, publicProcedure } from "~/server/ap
 import { clerkClient } from '@clerk/nextjs';
 import { retryDelay } from "node_modules/@trpc/client/dist/internals/retryDelay";
 
+import { Mbti } from "@prisma/client";
+
+const MbtiEnum = z.nativeEnum(Mbti);
+type MbtiEnum = z.infer<typeof MbtiEnum>;
+
 export const profileRouter = createTRPCRouter({
 
     upsertProfile: privateProcedure
@@ -12,6 +17,7 @@ export const profileRouter = createTRPCRouter({
       firstName: z.string(),
       lastName: z.string(), 
       projectedGraduationDate: z.date(),
+      mbti: MbtiEnum,
       genderIdentity: z.string(),
       sexuality: z.string(),
       preferredGender: z.string(),
@@ -34,6 +40,7 @@ export const profileRouter = createTRPCRouter({
           firstName: input.firstName,
           lastName: input.lastName,
           projectedGraduationDate: input.projectedGraduationDate,
+          mbti: input.mbti,
           genderIdentity: input.genderIdentity,
           sexuality: input.sexuality,
           preferredGender: input.preferredGender,
@@ -51,6 +58,7 @@ export const profileRouter = createTRPCRouter({
           firstName: input.firstName,
           lastName: input.lastName,
           projectedGraduationDate: input.projectedGraduationDate,
+          mbti: input.mbti,
           genderIdentity: input.genderIdentity,
           sexuality: input.sexuality,
           preferredGender: input.preferredGender,
