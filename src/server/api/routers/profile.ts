@@ -4,6 +4,9 @@ import { createTRPCRouter, privateProcedure, publicProcedure } from "~/server/ap
 import { clerkClient } from '@clerk/nextjs';
 import { retryDelay } from "node_modules/@trpc/client/dist/internals/retryDelay";
 
+
+const userProfile_mbti = ["INTJ", "INTP"]
+
 export const profileRouter = createTRPCRouter({
 
     upsertProfile: privateProcedure

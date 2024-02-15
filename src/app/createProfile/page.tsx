@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      this is where the user create's their profile.
+      this is where the user creates their profile.
     </div>
   );
 }
