@@ -25,7 +25,7 @@ model UserProfile {
   userID                  Int              @id
   preferredGender         String
   projectedGraduationDate DateTime
-  mbti                    UserProfile_mbti
+  mbti                    Mbti
 
   @@index([userID])
 }
@@ -108,7 +108,7 @@ enum Relationship_relationshipStatus {
   Dating
 }
 
-enum UserProfile_mbti {
+enum Mbti {
   INTJ
   INTP
   ENTJ
