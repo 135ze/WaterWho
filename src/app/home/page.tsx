@@ -5,9 +5,8 @@ import Link from "next/link";
 import { Navbar } from "../components/navbar";
 import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
-import styles from "./Account.module.css";
-import { DashboardMenu } from "../components/dashboardmenu"
-
+import styles from "./Account.module.scss";
+import { DashboardMenu } from "../components/dashboardmenu";
 
 export default function MainPage({ params }: { params: { id: string } }) {
   noStore();
@@ -26,7 +25,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
         <div className={styles.accountButtonsContainer}>
           <button
             onClick={() => handleButtonClick("Dashboard")}
-            className={`${styles.accountButton} ${
+            className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "Dashboard"
                 ? styles.activeButton
                 : styles.accountButton
@@ -36,7 +35,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
           </button>
           <button
             onClick={() => handleButtonClick("Interviews")}
-            className={`${styles.accountButton} ${
+            className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "Interviews"
                 ? styles.activeButton
                 : styles.accountButton
@@ -46,7 +45,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
           </button>
           <button
             onClick={() => handleButtonClick("Rankings")}
-            className={`${styles.accountButton} ${
+            className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "Rankings"
                 ? styles.activeButton
                 : styles.accountButton
@@ -56,7 +55,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
           </button>
           <button
             onClick={() => handleButtonClick("My Applications")}
-            className={`${styles.accountButton} ${
+            className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "My Applications"
                 ? styles.activeButton
                 : styles.accountButton
@@ -67,7 +66,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
         </div>
         {activeButton === "Dashboard" && (
           <div>
-          <DashboardMenu></DashboardMenu>
+            <DashboardMenu></DashboardMenu>
           </div>
         )}
         {activeButton === "Interviews" && (

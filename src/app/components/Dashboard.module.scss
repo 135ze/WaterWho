@@ -1,40 +1,38 @@
 
 .dm {
-    height: calc(100vh - 255px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
+    height: calc(100vh - 230px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
 }
 .dmContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
     background-color: var(--body-color-primary);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
     height: 120px;
-    justify-content: space-between
 }
 
 .dmButton {
-    font-size: clamp(10px, 1vw,16px);
     font-weight: 300;
     font-family: 'Jost', sans-serif;
-    padding: 10px 15px;
     background-color: var(--round-button-inactive-background);
-    border-radius: 15px;
     color: var(--round-button-inactive-text);
-    outline: 0;
-    border: 0; 
     margin-right: clamp(10px, 2vw, 15px);
-    cursor: pointer
 }
 
-.dmNumMatchesText {
-    color: var(--text-color-secondary);
-    margin-bottom: 0px;
+.dmButton:hover{
+    background-color: var(--round-button-inactive-background);
+    color: var(--round-button-inactive-text);
 }
 
 .dmWhiteButton {
     background-color: var(--round-button-active-background);
     color: var(--round-button-active-text);
+}
+
+.dmWhiteButton:hover {
+    background-color: var(--round-button-active-background);
+    color: var(--round-button-active-text);
+}
+
+.dmNumMatchesText {
+    color: var(--text-color-secondary);
+    margin-bottom: 0px;
 }
 
 .dmBody {
@@ -45,7 +43,7 @@
 .dmMatchesGrid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the column width as needed */
-    gap: 2em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
+    gap: 1.5em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
     overflow: auto;
     justify-items: center
 }
