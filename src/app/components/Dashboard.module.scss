@@ -3,14 +3,8 @@
     height: calc(100vh - 230px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
 }
 .dmContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
     background-color: var(--body-color-primary);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
     height: 120px;
-    justify-content: space-between
 }
 
 .dmButton {

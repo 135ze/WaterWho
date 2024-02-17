@@ -42,11 +42,11 @@ export function DashboardMenu() {
 
   return (
     <div className={styles.dm}>
-      <div className={styles.dmContainer}>
+      <div className={`d-flex p-3 mt-4 mb-4 flex-column justify-content-between ${styles.dmContainer}`}>
         <div>
           <button
             onClick={() => handleButtonClick("Matches")}
-            className={`btn btn-secondary  ${styles.dmButton} ${
+            className={`btn btn-secondary ${styles.dmButton} ${
               activeButton == "Matches" ? styles.dmWhiteButton : ""
             }`}
           >
