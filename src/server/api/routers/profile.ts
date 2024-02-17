@@ -4,10 +4,12 @@ import { createTRPCRouter, privateProcedure, publicProcedure } from "~/server/ap
 import { clerkClient } from '@clerk/nextjs';
 import { retryDelay } from "node_modules/@trpc/client/dist/internals/retryDelay";
 
-import { Mbti } from "@prisma/client";
+import { Mbti, ApplicationStatus } from "@prisma/client";
 
 const MbtiEnum = z.nativeEnum(Mbti);
 type MbtiEnum = z.infer<typeof MbtiEnum>;
+const ApplicationStatusEnum = z.nativeEnum(ApplicationStatus);
+type ApplicationStatusEnum = z.infer<typeof ApplicationStatusEnum>;
 
 export const profileRouter = createTRPCRouter({
 
@@ -83,4 +85,16 @@ export const profileRouter = createTRPCRouter({
       })
       return ret;
     }),
+
+    getMatches: privateProcedure
+    .input(z.object({userID: z.number()}))
+    .query(async ({ctx, input}) => {
+        const ret = await ctx.db.applications.findMany ({
+          where: { applicantID: input.userID,
+                    applicationStatus:  ApplicationStatusEnum.enum.Accepted
+                  },
+          select: {receiverID: true}
+        })
+        return ret;
+    })
 });
