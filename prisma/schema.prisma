@@ -1,73 +1,123 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider        = "prisma-client-js"
-    previewFeatures = ["driverAdapters"]
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
-
-    // Do not use foreign keys (PlanetScale does not support them)
-    relationMode = "prisma"
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
-model UserProfile{
-    id Int @id @default(autoincrement())
-    name String?
-    displayName String?
-    uniYear Int?
-    uniTerm Int?
-    genderIdentity String?
-    genderInterested String?
-    bday DateTime?
-    height String?
-    term1 String?
-    term2 String?
-    term3 String?
-    hometown String?
-
-    @@index([name])
+enum Mbti {
+    INTJ
+    INTP
+    ENTJ
+    ENTP
+    INFJ
+    INFP
+    ENFJ
+    ENFP
+    ISTJ
+    ISFJ
+    ESTJ
+    ESFJ
+    ISTP
+    ISFP
+    ESTP
+    ESFP
 }
 
-model Documents{
+enum RelationshipStatus {
+    None
+    Pending
+    Dating
+}
+
+enum ApplicationStatus {
+    None
+    Pending
+    Rejected
+    Accepted
+}
+
+enum ImageType {
+    PDF 
+    PNG 
+    Other
+}
+
+enum SocialType {
+    Instagram
+    Facebook
+    Github
+    Discord
+}
+
+model UserProfile {
+    userID Int @id 
+    firstName String
+    lastName String
+    projectedGraduationDate DateTime
+    mbti Mbti
+    genderIdentity String
+    sexuality String
+    preferredGender String
+    dateOfBirth DateTime
+    height Int
+    nextTerm1 String
+    nextTerm2 String
+    nextTerm3 String
+    cityOfResidence String
+    provinceOfResidence String
+    accountCreatedDate DateTime
+    @@index([userID])
+}
+
+model Documents {
     documentID Int @id @default(autoincrement())
-    user Int
-    documentType String
+    userID Int
     link String
 }
 
-model Images{
-    typeOfImage String
+model Images {
+    imageOwnerID Int
+    imageType ImageType
     imageLink String
-    imageOwner Int
-    @@unique([typeOfImage, imageLink, imageOwner])
+    @@unique([imageOwnerID, imageType, imageLink])
 }
 
-model Applications{
-    applicant Int
-    receiver Int
+model Applications {
+    applicantID Int
+    receiverID Int
     resume String
     coverLetter String
-    lor String
-    applicationStatus String
-    @@unique([applicant, receiver])
+    letterOfRecommendation String
+    applicationStatus ApplicationStatus @default(None)
+    rankFoward Int
+    rankBackward Int 
+    @@unique([applicantID, receiverID])
 }
 
-model Relationship{
-    personOne Int
-    personTwo Int
-    rankFwd Int
-    rankBwd Int
-    status String
-    @@unique([personOne, personTwo])
+model Relationship {
+    userOneID Int
+    userTwoID Int
+    relationshipStatus RelationshipStatus @default(None)
+    @@unique([userOneID, userTwoID])
 }
 
-model Socials{
+model Socials {
     userId Int
-    socialType String
+    socialType SocialType
     socialLink String
     @@unique([userId, socialType])
+}
+
+model Notifications {
+    receiverID Int
+    notificationID Int @id @default(autoincrement())
+    title String
+    message String 
+    timeCreated DateTime
+    status Boolean
 }

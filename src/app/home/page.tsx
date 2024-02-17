@@ -17,7 +17,6 @@ export default function MainPage({ params }: { params: { id: string } }) {
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
   };
-
   return (
     <div>
       <Navbar></Navbar>
