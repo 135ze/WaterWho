@@ -1,10 +1,11 @@
-import "~/styles/globals.css";
 
-import { Jost } from "next/font/google"; 
+
+import { Jost } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
-import { ClerkProvider } from '@clerk/nextjs'
-
-const jost = Jost({ subsets: ["latin"] }); 
+import { ClerkProvider } from "@clerk/nextjs";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "~/styles/globals.css";
+const jost = Jost({ subsets: ["latin"] });
 
 export const metadata = {
   title: "WaterWho",
@@ -19,11 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider publishableKey="pk_test_YmV0dGVyLXRpZ2VyLTc4LmNsZXJrLmFjY291bnRzLmRldiQ">
-    <html lang="en">
-      <body className={jost.className}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
-    </html>
+      <html lang="en">
+        <body className={jost.className}>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

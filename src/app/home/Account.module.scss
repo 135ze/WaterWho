@@ -7,23 +7,21 @@
     color: var(--text-color-primary);
 }
 .accountButton {
-    font-size: clamp(10px, 1vw,16px);
     font-weight: 300;
     font-family: 'Jost', sans-serif;
-    padding: 10px 15px;
     background-color: var(--square-button-blue-inactive);
     color: var(--square-button-blue-text-color);
-    outline: 0;
-    border: 0; 
     margin-right: clamp(10px, 2vw, 15px);
-    cursor: pointer
 }
 .accountButton:hover {
     background-color: var(--square-button-blue-hover);
+    color: var(--square-button-blue-text-color);
 }
+
 .accountButtonsContainer {
     display: flex;
 }
 .activeButton {
     background-color: var(--square-button-blue-active)
 }
+

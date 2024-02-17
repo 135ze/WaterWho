@@ -17,6 +17,7 @@ body {
   --round-button-active-text: black;
   --round-button-inactive-background: #67A3EB;
   --round-button-inactive-text: white;
+  --round-button-hover: #2F527B;
   --match-card-background: #D9D9D9;
 
 }
@@ -29,3 +30,30 @@ a {
 * {
   box-sizing: border-box;
 }
+/* Override default button colours */
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: var(--square-button-blue-active);
+    border-color: var(--square-button-blue-inactive);
+}
+
+.btn-primary {
+  border-color: var(--square-button-blue-inactive);   
+
+}
+
+/* Override default button colours */
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active {
+  background-color: var(--round-button-inactive-background);
+  border-color: var(--round-button-inactive-background);
+}
+
+.btn-secondary {
+  border-color: var(--round-button-inactive-background);
+}
+
+.btn-secondary:hover {
+  border-color: var(--round-button-inactive-background);
+}
+
