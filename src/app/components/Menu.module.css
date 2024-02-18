@@ -14,20 +14,3 @@
     background-color: var(--menu-background);
     max-width: 400px;
 }
-
-.menuContainer {
-    display: flex;    
-}
-.menuToggle {
-    max-width: 100%;
-    height: auto;
-    background-color: var(--menu-background);
-    display: flex;
-    padding: 10px;
-}
-
-.menuTab{
-    background-color: var(--menu-tab);
-    height: 50px;
-    width: 50px;
-}
