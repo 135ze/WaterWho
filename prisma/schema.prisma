@@ -239,4 +239,3 @@ model Notifications {
     timeCreated DateTime
     status Boolean
 }
->>>>>>> a1b0b57 (Added edums!!)

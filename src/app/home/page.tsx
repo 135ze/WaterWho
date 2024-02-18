@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Navbar } from "../components/navbar";
 import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
-import styles from "./Account.module.scss";
-import { DashboardMenu } from "../components/dashboardmenu";
+import styles from "./Account.module.css";
+import { DashboardMenu } from "../components/dashboardmenu"
 import { Menu } from "../components/menu"
 
 export default function MainPage({ params }: { params: { id: string } }) {
