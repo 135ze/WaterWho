@@ -60,9 +60,11 @@ a {
 
 .btn-secondary {
   border-color: var(--round-button-inactive-background);
+  background-color: var(--round-button-inactive-background);
 }
 
 .btn-secondary:hover {
+  background-color: var(--round-button-inactive-background);
   border-color: var(--round-button-inactive-background);
 }
 
