@@ -42,7 +42,9 @@ export function DashboardMenu() {
 
   return (
     <div className={styles.dm}>
-      <div className={`d-flex p-3 mt-4 mb-4 flex-column justify-content-between ${styles.dmContainer}`}>
+      <div
+        className={`d-flex p-3 mt-4 mb-4 flex-column justify-content-between ${styles.dmContainer}`}
+      >
         <div>
           <button
             onClick={() => handleButtonClick("Matches")}
@@ -71,7 +73,12 @@ export function DashboardMenu() {
         </div>
         <div>
           {activeButton == "Matches" && (
-            <p className={styles.dmNumMatchesText}> TOTAL MATCHES: {matchData.length} </p>
+            <div className="d-flex">
+            <p className={styles.dmNumMatchesText}>
+              TOTAL MATCHES:
+            </p>
+            <div className={`mx-3 border border-dark px-3 rounded-4 ${styles.dmNumberBubble}`}>{matchData.length} </div>
+            </div>
           )}
         </div>
       </div>
