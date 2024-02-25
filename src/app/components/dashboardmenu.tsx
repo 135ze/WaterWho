@@ -1,6 +1,7 @@
 import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
+import { BrowseCard } from "./browseCard";
 export function DashboardMenu() {
   const [activeButton, setActiveButton] = useState<string>("Matches");
   const handleButtonClick = (buttonName: string) => {
@@ -72,25 +73,48 @@ export function DashboardMenu() {
           </button>
         </div>
         <div>
-          {activeButton == "Matches" && (
+          {activeButton === "Matches" && (
             <div className="d-flex">
-            <p className={styles.dmNumMatchesText}>
-              TOTAL MATCHES:
-            </p>
-            <div className={`mx-3 border border-dark px-3 rounded-4 ${styles.dmNumberBubble}`}>{matchData.length} </div>
+              <p className={styles.dmNumMatchesText}>TOTAL MATCHES:</p>
+              <div
+                className={`mx-3 border border-dark px-3 rounded-4 ${styles.dmNumberBubble}`}
+              >
+                {matchData.length}
+              </div>
             </div>
+          )}
+
+          {activeButton === "Browse" && (
+            <form>
+              <input
+                placeholder="Keyword Search"
+                className={`rounded px-3 fs-6 border border-dark ${styles.dmSearch}`}
+                type="text"
+              />
+            </form>
           )}
         </div>
       </div>
       <div
         className={`${styles.dmBody} ${
-          activeButton == "Matches" ? styles.dmMatchesGrid : ""
+          activeButton === "Matches" ? styles.dmMatchesGrid : ""
         }`}
       >
         {activeButton === "Matches" &&
           /* TO DO: future, may want to check for values existence before rendering for safety */
           matchData.map((match) => (
             <MatchCard
+              key={match.id}
+              id={match.id}
+              displayName={match.displayName}
+              age={match.age}
+              program={match.program}
+            />
+          ))}
+
+        {activeButton === "Browse" &&
+          matchData.map((match) => (
+            <BrowseCard
               key={match.id}
               id={match.id}
               displayName={match.displayName}

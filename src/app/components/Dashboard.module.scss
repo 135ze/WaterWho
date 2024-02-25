@@ -43,6 +43,7 @@
     height: calc(100% - 125px);
     padding: 20px;
     border-radius: 10px;
+    overflow-y: auto;
 }
 .dmMatchesGrid{
     display: grid;
@@ -53,6 +54,11 @@
 }
 
 .dmNumberBubble {
-    background-color: white;
-    
+    background-color: white;    
+}
+
+.dmSearch {
+    border-radius: 10px;
+    width: clamp(150px, 25vw, 300px);
+    box-shadow: 0 .25rem 0.25rem rgba(0, 0, 0, 0.4);
 }

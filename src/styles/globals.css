@@ -26,6 +26,8 @@ body {
   --round-button-inactive-text: white;
   --round-button-hover: #2F527B;
   --match-card-background: #D9D9D9;
+  --browse-card-background: white;
+  --browse-card-button: #D9D9D9;
   --menu-background:  #D9D9D9;
   --menu-tab:  #437FC5;
   --dark-blue-text: #2F527B;
@@ -48,7 +50,11 @@ a {
 
 .btn-primary {
   border-color: var(--square-button-blue-inactive);   
+  background-color: var(--square-button-blue-inactive);
+}
 
+.btn-primary:hover {
+  background-color: var(--square-button-blue-hover);
 }
 
 /* Override default button colours */
@@ -67,6 +73,14 @@ a {
   background-color: var(--round-button-inactive-background);
   border-color: var(--round-button-inactive-background);
 }
+.btn-tertiary {
+  background-color: var(--browse-card-button);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--browse-card-button);
+}
+
 
 .hover {
   cursor: pointer
@@ -83,4 +97,5 @@ a {
 .text-primary {
   color: var(--dark-blue-text) !important;
 }
+
 

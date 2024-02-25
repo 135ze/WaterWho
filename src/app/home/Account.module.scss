@@ -11,15 +11,8 @@
     border-radius: 12px;
     padding: 15px 23px 15px 23px;
     font-family: 'Jost', sans-serif;
-    background-color: var(--square-button-blue-inactive);
-    color: var(--square-button-blue-text-color);
     margin-right: clamp(10px, 2vw, 15px);
 }
-.accountButton:hover {
-    background-color: var(--square-button-blue-hover);
-    color: var(--square-button-blue-text-color);
-}
-
 .accountButtonsContainer {
     display: flex;
 }
