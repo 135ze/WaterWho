@@ -2,6 +2,7 @@ import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
 import { BrowseCard } from "./browseCard";
+import { BrowseCard } from "./browseCard";
 export function DashboardMenu() {
   const [activeButton, setActiveButton] = useState<string>("Matches");
   const handleButtonClick = (buttonName: string) => {
