@@ -2,15 +2,13 @@ import styles from "./BrowseCards.module.scss";
 import { Tag } from "./tag";
 
 interface BrowseCardProp {
-  id: number;
   displayName: string;
-  age: number;
   program: string;
   tags: string[];
 }
 
 export function BrowseCard(props: BrowseCardProp) {
-  const { id, displayName, age, program, tags} = props;
+  const { displayName, program, tags} = props;
 
   return (
     <div className={`d-flex justify-content-between rounded-5 mb-3 ${styles.bcContainer}`}>

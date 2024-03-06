@@ -126,9 +126,7 @@ export function DashboardMenu() {
           matchData.map((match) => (
             <BrowseCard
               key={match.id}
-              id={match.id}
               displayName={match.displayName}
-              age={match.age}
               program={match.program}
               tags={match.tags}
             />
