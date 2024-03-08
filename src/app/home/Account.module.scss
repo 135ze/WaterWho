@@ -4,25 +4,19 @@
 .accountHeader {
     font-size: clamp(18px, 2vw, 30px);
     font-weight: 600;
+    color: var(--text-color-primary);
 }
 .accountButton {
-    font-size: clamp(10px, 1vw,16px);
     font-weight: 300;
+    border-radius: 12px;
+    padding: 15px 23px 15px 23px;
     font-family: 'Jost', sans-serif;
-    padding: 10px 15px;
-    background-color: #437FC5;
-    color: white;
-    outline: 0;
-    border: 0; 
     margin-right: clamp(10px, 2vw, 15px);
-    cursor: pointer
-}
-.accountButton:hover {
-    background-color: #3E72B0;
 }
 .accountButtonsContainer {
     display: flex;
 }
 .activeButton {
-    background-color: #2F527B;
+    background-color: var(--square-button-blue-active)
 }
+

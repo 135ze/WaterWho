@@ -2,10 +2,9 @@
 
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
-import {Navbar} from "./components/navbar"
 
 import { api } from "~/trpc/react";
-import styles from "./index.module.scss";
+import styles from "./index.module.css";
 import { SignIn,  useUser } from "@clerk/nextjs";
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
 
   return (
     <div>
-      this is the landing page.
+      this is the users profile
     </div>
   );
 }

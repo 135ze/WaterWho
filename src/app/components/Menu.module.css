@@ -1,0 +1,16 @@
+.menuToggle {
+    background-color: var(--menu-background);
+    padding: 10px;
+    width: 3em;
+}
+
+.menuTab{
+    background-color: var(--menu-tab);
+    height: 50px;
+    width: 50px;
+}
+
+.menuContainer {
+    background-color: var(--menu-background);
+    max-width: 400px;
+}

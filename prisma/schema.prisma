@@ -1,47 +1,74 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider        = "prisma-client-js"
-    previewFeatures = ["driverAdapters"]
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
 
-    // Do not use foreign keys (PlanetScale does not support them)
-    relationMode = "prisma"
+enum Mbti {
+    INTJ
+    INTP
+    ENTJ
+    ENTP
+    INFJ
+    INFP
+    ENFJ
+    ENFP
+    ISTJ
+    ISFJ
+    ESTJ
+    ESFJ
+    ISTP
+    ISFP
+    ESTP
+    ESFP
 }
 
 enum RelationshipStatus {
     None
     Pending
-    Situationship
-    Taken
+    Dating
 }
 
 enum ApplicationStatus {
     None
     Pending
-    Ranked
-    Completed
+    Rejected
+    Accepted
+}
+
+enum ImageType {
+    PDF 
+    PNG 
+    Other
+}
+
+enum SocialType {
+    Instagram
+    Facebook
+    Github
+    Discord
 }
 
 model UserProfile {
-    userID Int @id @default(autoincrement())
+    userID Int @id 
     firstName String
     lastName String
-    currentYear Int
-    currentTerm String
-    genderIdentity String?
-    sexuality String?
+    projectedGraduationDate DateTime
+    mbti Mbti
+    genderIdentity String
+    sexuality String
+    preferredGender String
     dateOfBirth DateTime
     height Int
     nextTerm1 String
     nextTerm2 String
     nextTerm3 String
-    cityOfResidence String?
+    cityOfResidence String
     provinceOfResidence String
     accountCreatedDate DateTime
     @@index([userID])
@@ -50,15 +77,14 @@ model UserProfile {
 model Documents {
     documentID Int @id @default(autoincrement())
     userID Int
-    documentType String
     link String
 }
 
 model Images {
     imageOwnerID Int
-    typeOfImage String
+    imageType ImageType
     imageLink String
-    @@unique([imageOwnerID, typeOfImage, imageLink])
+    @@unique([imageOwnerID, imageType, imageLink])
 }
 
 model Applications {
@@ -74,15 +100,22 @@ model Applications {
 model Relationship {
     userOneID Int
     userTwoID Int
-    rankFwd Int
-    rankBwd Int
-    status String
+    relationshipStatus RelationshipStatus @default(None)
     @@unique([userOneID, userTwoID])
 }
 
 model Socials {
     userId Int
-    socialType String
+    socialType SocialType
     socialLink String
     @@unique([userId, socialType])
+}
+
+model Notifications {
+    receiverID Int
+    notificationID Int @id @default(autoincrement())
+    title String
+    message String 
+    timeCreated DateTime
+    status Boolean
 }
