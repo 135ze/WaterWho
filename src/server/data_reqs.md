@@ -59,7 +59,7 @@ ID: string
 Name: string
 Bday: date
 Gender identity: string
-Height: ?
+Height: Number in cm
 Uni: String
 Study Term: number
 Location: String
@@ -71,13 +71,13 @@ Tags: String of ints, comma seperated
 Phone Number: number
 Discord username: string
 Instagram Handle: string
-Personal Description: string (Char Limit ?)
-Relationship Style: string (char Limit ?)
-Benefits and Compensation: (char Limit ?)
+Personal Description: string (Char Limit 280)
+Relationship Style: string (char Limit 280)
+Benefits and Compensation: (char Limit 280)
 ideal candidate
-  - Interests: (char Limit ?)
-  - Dealbreakers: (char Limit ?)
-  - Desired Traits: (char Limit ?)
+  - Interests: (char Limit 100)
+  - Dealbreakers: (char Limit 100)
+  - Desired Traits: (char Limit 100)
 
 Documents: PK: (documentID)
 documentID
