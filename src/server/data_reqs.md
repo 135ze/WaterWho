@@ -54,19 +54,30 @@ rejected applications
 
 # Base Schema:
 
-UserProfile: PK: (ID)
-ID
-Name
-Year
-Term
-Program
-Gender Identity
-Gender Interested
-Age
-Height
-Sequence (next 3 terms)
-Hometown
-WorkHistory ??? (don't understand this field)
+UserProfile: PK: (ID) : Changed this almost completely. Update once backend update is done.
+ID: string
+Name: string
+Bday: date
+Gender identity: string
+Height: ?
+Uni: String
+Study Term: number
+Location: String
+Sexual Orientation: string
+Religion: string
+Year and Major: string
+MBTI: MBTI ENUM class
+Tags: String of ints, comma seperated
+Phone Number: number
+Discord username: string
+Instagram Handle: string
+Personal Description: string (Char Limit ?)
+Relationship Style: string (char Limit ?)
+Benefits and Compensation: (char Limit ?)
+ideal candidate
+  - Interests: (char Limit ?)
+  - Dealbreakers: (char Limit ?)
+  - Desired Traits: (char Limit ?)
 
 Documents: PK: (documentID)
 documentID
