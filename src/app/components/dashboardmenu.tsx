@@ -14,14 +14,23 @@ export function DashboardMenu() {
       age: 21,
       program: "Computer Science",
       term: "2A",
+      tags: ["Certified_Gamer", "Simp", "FAANG", "SoundCloud_Rapper", "Cooks"],
     },
-    { id: 2, displayName: "Orange", age: 20, program: "Software Engineering" },
+    {
+      id: 2,
+      displayName: "Orange",
+      age: 20,
+      program: "Software Engineering",
+      term: "1B",
+      tags: ["Certified_Gamer", "Simp", "FAANG", "SoundCloud_Rapper", "Cooks"],
+    },
     {
       id: 3,
       displayName: "Banana",
       age: 20,
       program: "Computer Science & Business Administration",
       term: "2B",
+      tags: ["Certified_Gamer", "Simp", "CS_Nerd", "DTF"],
     },
     {
       id: 4,
@@ -29,14 +38,23 @@ export function DashboardMenu() {
       age: 21,
       program: "I am a droput",
       term: "2B",
+      tags: ["Certified_Gamer", "Simp", "DTF"],
     },
-    { id: 5, displayName: "Strawberry", age: 21, program: "Wahoo", term: "2B" },
+    {
+      id: 5,
+      displayName: "Strawberry",
+      age: 21,
+      program: "Wahoo",
+      term: "2B",
+      tags: ["Certified_Gamer", "Simp", "FAANG", "SoundCloud_Rapper", "Cooks"],
+    },
     {
       id: 5,
       displayName: "LooooongName",
       age: 21,
       program: "Systems Design Engineering",
       term: "2B",
+      tags: ["Certified_Gamer", "Masters_in_League", "DTF"],
     },
     /* These are just for testing purposes*/
   ]);
@@ -116,10 +134,9 @@ export function DashboardMenu() {
           matchData.map((match) => (
             <BrowseCard
               key={match.id}
-              id={match.id}
               displayName={match.displayName}
-              age={match.age}
               program={match.program}
+              tags={match.tags}
             />
           ))}
       </div>
