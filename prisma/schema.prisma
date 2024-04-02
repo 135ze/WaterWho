@@ -76,7 +76,7 @@ model UserProfile {
     Interests String 
     DealBreakers String 
     DesiredTraits String
-    accountCreatedDate DateTime
+    AccountCreatedDate DateTime
     @@index([UserID])
 }
 
