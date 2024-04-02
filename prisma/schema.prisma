@@ -55,23 +55,29 @@ enum SocialType {
 }
 
 model UserProfile {
-    userID Int @id 
-    firstName String
-    lastName String
-    projectedGraduationDate DateTime
-    mbti Mbti
-    genderIdentity String
-    sexuality String
-    preferredGender String
-    dateOfBirth DateTime
-    height Int
-    nextTerm1 String
-    nextTerm2 String
-    nextTerm3 String
-    cityOfResidence String
-    provinceOfResidence String
+    UserID Int @id 
+    Name String
+    DateOfBirth String
+    Gender String
+    SexualOrientation String
+    Height Int
+    School String
+    YearAndMajor String
+    Location String
+    CurrentStudyTerm String
+    Mbti Mbti
+    Tags String 
+    PhoneNumber String
+    Discord String 
+    Instagram String
+    PersonalDescription String 
+    RelationshipStyle String 
+    BenefitsAndCompensation String 
+    Interests String 
+    DealBreakers String 
+    DesiredTraits String
     accountCreatedDate DateTime
-    @@index([userID])
+    @@index([UserID])
 }
 
 model Documents {
@@ -81,7 +87,7 @@ model Documents {
 }
 
 model Images {
-    imageOwnerID Int
+    imageOwnerID Int 
     imageType ImageType
     imageLink String
     @@unique([imageOwnerID, imageType, imageLink])

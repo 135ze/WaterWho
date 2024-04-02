@@ -52,60 +52,60 @@ rejected applications
 - ranking after
 - date of expiry
 
-# Base Schema:
+## Base Schema:
 
-UserProfile: PK: (ID) : Changed this almost completely. Update once backend update is done.
-ID: string
-Name: string
-Bday: date
-Gender identity: string
-Height: Number in cm
-Uni: String
-Study Term: number
-Location: String
-Sexual Orientation: string
-Religion: string
-Year and Major: string
-MBTI: MBTI ENUM class
-Tags: String of ints, comma seperated
-Phone Number: number
-Discord username: string
-Instagram Handle: string
-Personal Description: string (Char Limit 280)
-Relationship Style: string (char Limit 280)
-Benefits and Compensation: (char Limit 280)
-ideal candidate
-  - Interests: (char Limit 100)
-  - Dealbreakers: (char Limit 100)
-  - Desired Traits: (char Limit 100)
+#UserProfile: PK: (ID) : Changed this almost completely. Update once backend update is done.\
 
-Documents: PK: (documentID)
-documentID
-user
-documentType
-Link
+UserID: Int @id \
+Name: String\
+DateOfBirth: String\
+Gender: String\
+SexualOrientation: String\
+Height: Int\
+School: String\
+YearAndMajor: String\
+Location: String\
+CurrentStudyTerm: String\
+Mbti: Mbti\
+Tags: String of Integers, separated by comma\
+PhoneNumber: String\
+Discord: String \
+Instagram: String\
+PersonalDescription: String (Char Limit 280) \
+RelationshipStyle: String (Char Limit 280) \
+BenefitsAndCompensation: String (Char Limit 280) \
+Interests: String (Char Limit 100) \
+DealBreakers: String (Char Limit 100) \
+DesiredTraits: String (Char Limit 100) \
+accountCreatedDate DateTime\
 
-Images: PK: none
-imageLink
-TypeOfImage
-User
+# Documents: PK: (documentID)
+documentID\
+user\
+documentType\
+Link\
 
-Applications: PK: (Applicant + Receiver)
-Applicant
-Receiver
-Resume
-CoverLetter
-LOR
-ApplicationStatus
+Images: PK: none\
+imageLink\
+TypeOfImage\
+User\
 
-Relationship: PK: (personOne, personTwo)
-personOne
-personTwo
-rankFwd
-rankBwd
-status 
+Applications: PK: (Applicant + Receiver)\
+Applicant\
+Receiver\
+Resume\
+CoverLetter\
+LOR\
+ApplicationStatus\
 
-Socials: PK: (userId + socialType)
-userid
-socialType
-socialLink
+Relationship: PK: (personOne, personTwo)\
+personOne\
+personTwo\
+rankFwd\
+rankBwd\
+status \
+
+Socials: PK: (userId + socialType)\
+userid\
+socialType\
+socialLink\
