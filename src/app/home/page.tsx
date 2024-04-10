@@ -7,6 +7,7 @@ import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.scss";
 import { DashboardMenu } from "../components/dashboardmenu"
+import { Interviews } from "../components/interviews"
 import { Menu } from "../components/menu"
 
 export default function MainPage({ params }: { params: { id: string } }) {
@@ -73,7 +74,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
         )}
         {activeButton === "Interviews" && (
           <div>
-            <p>Interview Content HERE (TODO)</p>
+            <Interviews></Interviews>
           </div>
         )}
         {activeButton === "Rankings" && (

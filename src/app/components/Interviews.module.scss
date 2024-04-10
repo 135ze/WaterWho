@@ -1,0 +1,21 @@
+.dm {
+    height: calc(100vh - 300px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
+}
+
+.dmBody {
+    background-color: var(--body-color-primary);
+    height: calc(100%);
+    padding: 30px;
+    border-radius: 10px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.dmInterviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the column width as needed */
+    gap: 2em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
+    overflow: auto;
+    justify-items: center;
+}
+
