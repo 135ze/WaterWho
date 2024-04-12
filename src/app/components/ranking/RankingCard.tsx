@@ -1,13 +1,13 @@
-import styles from "./interviewCard.module.scss";
+import styles from "./rankingCard.module.scss";
 /** To Do: likely will have to change this structure depending on what we choose to pass in from API call*/
-interface InterviewCardProps {
+interface RankingsCardProps {
     id: number,
     name: string,
     program: string,
     term: string
 }
 
-export function InterviewCard(props: InterviewCardProps) {
+export function RankingCard(props: RankingsCardProps) {
     const {id, name, program, term} = props;
   return (
     <div className={`d-flex flex-column justify-content-between ${styles.cardContainer}`}> 
@@ -22,7 +22,6 @@ export function InterviewCard(props: InterviewCardProps) {
             </div>
             <button className={`btn btn-secondary ${styles.cardViewProfileButton}`}> View Profile </button>
         </div>
-        
     </div>
 
   );

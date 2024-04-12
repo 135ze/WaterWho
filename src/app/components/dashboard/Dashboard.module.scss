@@ -49,7 +49,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the column width as needed */
     gap: 2em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
-    overflow: auto;
+    grid-auto-flow: column !important;
     justify-items: center
 }
 
