@@ -1,10 +1,10 @@
-import styles from "./Interviews.module.scss";
+import styles from "./Rankings.module.scss";
 import React, { useState } from "react";
 
-import { InterviewCard } from "./interviewCard";
+import { RankingCard } from "./RankingCard";
 
-export function Interviews() {
-  const interviewsData = [
+export function Rankings() {
+  const RankingsData = [
     {
       id: 1,
       name: "Mango",
@@ -58,17 +58,19 @@ export function Interviews() {
 
   return (
     <div className={styles.dm}>
-      <div className={`${styles.dmBody} ${styles.dmInterviewsGrid}`}>
-        {interviewsData.map((interview) => (
-            <InterviewCard
-              key={interview.id}
-              id={interview.id}
-              name={interview.name}
-              program={interview.program}
-              term={interview.term}
+      <div className={`${styles.dmBody} ${styles.dmRankingsGrid}`}>
+        {RankingsData.map((ranking) => (
+            <RankingCard
+              key={ranking.id}
+              id={ranking.id}
+              name={ranking.name}
+              program={ranking.program}
+              term={ranking.term}
             />
           ))}
       </div>
+      <button className={`btn btn-secondary`}>Edit Rankings</button>
+      <button className={`btn btn-primary`}>Submit Rankings</button>
     </div>
   );
 }

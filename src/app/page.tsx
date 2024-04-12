@@ -2,7 +2,7 @@
 
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
-import {Navbar} from "./components/navbar"
+import {Navbar} from "./components/navbar/navbar"
 
 import { api } from "~/trpc/react";
 import styles from "./index.module.scss";
