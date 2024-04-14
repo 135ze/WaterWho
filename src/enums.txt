@@ -1,0 +1,44 @@
+enum Mbti {
+    INTJ
+    INTP
+    ENTJ
+    ENTP
+    INFJ
+    INFP
+    ENFJ
+    ENFP
+    ISTJ
+    ISFJ
+    ESTJ
+    ESFJ
+    ISTP
+    ISFP
+    ESTP
+    ESFP
+}
+
+enum RelationshipStatus {
+    None
+    Pending
+    Dating
+}
+
+enum ApplicationStatus {
+    None
+    Pending
+    Rejected
+    Accepted
+}
+
+enum ImageType {
+    PDF 
+    PNG 
+    Other
+}
+
+enum SocialType {
+    Instagram
+    Facebook
+    Github
+    Discord
+}
