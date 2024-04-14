@@ -3,15 +3,17 @@
 //would it be funny if i added like easter eggs in the comments.
 //this was all written by chwistina
 
+// real note: ONLY ADD TO THE BOTTOM OF THE LIST!! otherwise we need to edit all the existing values in the db
+//            to account for the shifted values. so don't do that. unnecessary. 
 
-const mbti = ["INTJ", 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP', 'ISTJ', 'ISFJ', 'ESTJ',
+const MBTI = ["INTJ", 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP', 'ISTJ', 'ISFJ', 'ESTJ',
  'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP']
 
-const relationshipstatus = ['None', 'Pending', 'Dating']
+const RELATIONSHIP_STATUS = ['None', 'Pending', 'Dating']
 
-const applicationstatus = ['None', 'Pending', 'Rejected', 'Accepted']
+const APPLICATION_STATUS = ['None', 'Pending', 'Rejected', 'Accepted']
 
-const imagetype = ['PDF', 'PNG', 'OTHER']
+const IMAGE_TYPE = ['PDF', 'PNG', 'OTHER']
 
-const socialtype = ['Instagram', 'Facebook', 'Github', 'Discord']
+const SOCIAL_TYPE = ['Instagram', 'Facebook', 'Github', 'Discord']
 
