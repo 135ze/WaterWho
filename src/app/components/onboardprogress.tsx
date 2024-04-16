@@ -2,14 +2,14 @@ import React from 'react'
 import styles from './OnboardProgress.module.scss'
 
 interface OnboardProgressProps {
-    currentPage: number;
+    currentStep: number;
 }
 
 const OnboardProgress = (props: OnboardProgressProps) => {
-    const {currentPage} = props;
+    const {currentStep} = props;
 
     let progress = {Basic_Info: "D9D9D9", Your_Posting: "D9D9D9", Complete: "D9D9D9"};
-    switch (currentPage) {
+    switch (currentStep) {
         case 1:
             progress = {
                 Basic_Info: "326096",
