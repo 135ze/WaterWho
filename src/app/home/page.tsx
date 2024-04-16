@@ -20,7 +20,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
   return (
     <div>
       <Navbar></Navbar>
-      <Menu></Menu>
+      {/* <Menu></Menu> */}
       <div className={styles.accountContainer}>
         <h1 className={styles.accountHeader}>Welcome back, John!</h1>
         {/* Add in user name later based on login*/}

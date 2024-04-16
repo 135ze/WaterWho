@@ -10,7 +10,7 @@ interface MatchCardProps {
 export function MatchCard(props: MatchCardProps) {
     const {id, displayName, age, program} = props;
   return (
-    <div className={`p-20 d-flex flex-column justify-content-between p-3 ${styles.cardContainer}`}> 
+    <div className={`d-flex flex-column justify-content-between px-3 py-4 ${styles.cardContainer}`}> 
         <div className={styles.cardImage}>
             <img src="https://pbs.twimg.com/media/FMOMOmGWQAQpapJ.jpg:large"/>
         </div>
