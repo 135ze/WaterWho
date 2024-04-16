@@ -14,7 +14,10 @@ export default function Custom404() {
         <div className={styles.textWrapper}>
           <h1>Uh oh!</h1>
           <h4>We couldn&apos;t find the page you were looking for :(</h4>
-          <p>lmao loser</p>
+          <p style={{marginTop: "10px"}}>lmao loser</p>
+          <button className={styles.button}>
+            <a href="/">Return Home</a>
+          </button>
         </div>
         <div className={styles.imageWrapper}>
           <Image
