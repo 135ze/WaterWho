@@ -65,17 +65,17 @@ export default function Home() {
         mollit anim id est laborum.
       </div>
 
-      <div className={`${styles.cardSwiper}`}>
-        <div className={`${styles.cardGroup}`}>
-          <div className={`${styles.bigCard} ${styles.card}`}></div>
-          {/* <div className={`${styles.smallCardWrapper}`}> */}
+      <div className={`${styles.cardSwiperWrapper}`}>
+        <div className={`${styles.cardSwiper}`}>
+          <div className={`${styles.cardGroup}`}>
+            <div className={`${styles.bigCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
             <div className={`${styles.smallCard} ${styles.card}`}></div>
-          {/* </div> */}
+          </div>
         </div>
       </div>
 

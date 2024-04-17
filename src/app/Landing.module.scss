@@ -52,14 +52,18 @@
 }
 
 // Card Carousel
+.cardSwiperWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .cardSwiper {
   margin: 0px;
-  height: 40vh;
-  // background-color: var(--body-color-primary);
   background-color: white;
   display: grid;
   place-items: center;
   align-content: center;
+  position: relative;
 }
 
 .cardGroup,
@@ -67,74 +71,67 @@
   aspect-ratio: 5 / 7;
 }
 
-.cardGroup,
-.bigCard {
-  width: 30vmin;
+.cardGroup {
+  width: 14vw;
 }
 
 .card {
   background-color: rgba(255, 255, 255, 0.05);
-  position: absolute;
   transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  position: absolute;
   background-position: center;
   background-size: cover;
 }
 
 .bigCard {
-  width: 20vmin;
   aspect-ratio: 5 / 7;
+  width: 14vw;
   background-color: white;
-  border-radius: 1vmin;
+  border-radius: 2vw;
 }
 
 .smallCard {
-  width: 12vmin;
-  border-radius: 2vmin;
-  transform: translate(-50%, -50%);
+  width: 10vw;
+  left: 2vw;
+  top: 4vh;
+  border-radius: 2vw;
   box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.25);
-}
-
-.smallCardWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: -50px;
 }
 
 /* Default Card Positioning */
 
 .bigCard:nth-child(1) {
   background-image: url("./assets/carouselCards/pose.jpg");
-  transform: translateX(-10%);
 }
 
 .smallCard:nth-child(2) {
   background-image: url("./assets/carouselCards/beach.jpg");
-  transform: translateX(-10%) rotate(-5deg);
+  transform: rotate(-5deg);
 }
 
 .smallCard:nth-child(3) {
   background-image: url("./assets/carouselCards/dog.jpg");
-  transform: translateX(-10%) rotate(-10deg);
+  transform: rotate(-10deg);
 }
 
 .smallCard:nth-child(4) {
   background-image: url("./assets/carouselCards/drinks.jpg");
-  transform: translateX(-10%) rotate(-1deg);
+  transform: rotate(-1deg);
 }
 
 .smallCard:nth-child(5) {
   background-image: url("./assets/carouselCards/flower.jpg");
-  transform: translateX(-10%) rotate(-1deg);
+  transform: rotate(-1deg);
 }
 
 .smallCard:nth-child(6) {
   background-image: url("./assets/carouselCards/pastry.jpg");
-  transform: translateX(-10%) rotate(-1deg);
+  transform: otate(-1deg);
 }
 
 .smallCard:nth-child(7) {
   background-image: url("./assets/carouselCards/nyc.jpg");
-  transform: translateX(-10%) rotate(-1deg);
+  transform: rotate(-1deg);
 }
 
 /* Hovered Card Positioning */
