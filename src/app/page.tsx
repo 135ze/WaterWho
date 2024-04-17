@@ -68,12 +68,14 @@ export default function Home() {
       <div className={`${styles.cardSwiper}`}>
         <div className={`${styles.cardGroup}`}>
           <div className={`${styles.bigCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
-          <div className={`${styles.smallCard} ${styles.card}`}></div>
+          {/* <div className={`${styles.smallCardWrapper}`}> */}
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+            <div className={`${styles.smallCard} ${styles.card}`}></div>
+          {/* </div> */}
         </div>
       </div>
 
