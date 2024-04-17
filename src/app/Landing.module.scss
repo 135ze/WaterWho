@@ -55,6 +55,7 @@
 .cardSwiperWrapper {
   display: flex;
   justify-content: center;
+  padding-bottom: 5vh;
 }
 
 .cardSwiper {
@@ -73,6 +74,7 @@
 
 .cardGroup {
   width: 14vw;
+  background-color: var(--body-color-primary);
 }
 
 .card {
