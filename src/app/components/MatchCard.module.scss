@@ -11,6 +11,7 @@
   border-radius: 15px;
   width: 100%;
   overflow: hidden;
+  min-height: 200px;
 }
 
 .cardImage img {
@@ -58,4 +59,18 @@
 .cardViewProfileButton:hover {
   background-color: var(--round-button-active-background);
   color: var(--body-color-primary) !important
+}
+
+@media only screen and (max-width: 767px) {
+  .cardViewProfileButton {
+    display: inline-block !important;
+  }
+
+  .cardContainer {
+    height: 24em;
+  }
+
+  .cardContents:hover {
+    transform: none;
+  }
 }
