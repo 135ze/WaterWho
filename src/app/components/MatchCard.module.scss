@@ -35,7 +35,7 @@
 }
 
 .cardContents {
-  transition: transform 0.3s ease; /* Adding transition for smooth animation */
+  transition: transform 0.3s ease;
 }
 
 .cardContents:hover {
@@ -48,14 +48,14 @@
   font-weight: 400;
   background-color: var(--round-button-inactive-background);
   color: var(--round-button-inactive-text);
-  transition: opacity 0.3s ease; /* Adding transition for smooth animation */
+  transition: opacity 0.3s ease;
 }
 
 .cardContainer:hover .cardViewProfileButton {
-  display: inline-block; /* Display the button on hover */
+  display: inline-block;
 }
 
 .cardViewProfileButton:hover {
   background-color: var(--round-button-active-background);
-  color: var(--round-button-active-text);
+  color: var(--body-color-primary) !important
 }
