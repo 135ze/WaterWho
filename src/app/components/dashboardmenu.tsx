@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
