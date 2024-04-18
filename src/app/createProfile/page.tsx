@@ -6,13 +6,14 @@ import Link from "next/link";
 import { api } from "~/trpc/react";
 import styles from "./index.module.css";
 import { SignIn,  useUser } from "@clerk/nextjs";
+import Onboarding from "./temp";
 
 export default function Home() {
   noStore();
 
   return (
     <div>
-      this is where the user creates their profile.
+      <Onboarding/>
     </div>
   );
 }
