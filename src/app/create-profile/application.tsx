@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Application.module.scss";
+import buttonStyles from "./Basic-Info.module.scss";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 
@@ -57,7 +58,9 @@ function ImageDrop(props: { file: File | undefined; onClick: () => void }) {
   );
 }
 
-export default function OnboardingApplication(props: {handleNext: () => void}) {
+export default function OnboardingApplication(props: {
+  handleNext: () => void;
+}) {
   const { handleNext } = props;
   const [about, setAbout] = useState({
     employer: "",
@@ -209,8 +212,23 @@ export default function OnboardingApplication(props: {handleNext: () => void}) {
           />
         </div>
       </section>
-
-      <button onClick={() => handleNext()}>Next</button>
+      <div className={styles.buttonContainer}>
+      <button
+          type="button"
+          className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
+          onClick={() => handleNext()}
+        >
+          &laquo; Back
+        </button>
+      <button
+          type="button"
+          className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
+          onClick={() => handleNext()}
+        >
+          Next &raquo;
+        </button>
+      </div>
+        
     </>
   );
 }

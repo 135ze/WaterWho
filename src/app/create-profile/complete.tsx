@@ -2,7 +2,9 @@
 import React from "react";
 import Image, { type StaticImageData } from "next/image";
 import styles from "./Complete.module.scss";
+import buttonStyles from "./Basic-Info.module.scss";
 import { Tag } from "../components/dashboard/tag";
+import { useRouter } from 'next/navigation';
 
 interface CompleteProps {
     // WHEN USING FILES INSTEAD OF IMPORTED IMAGE, CHANGE TO FILE
@@ -14,7 +16,9 @@ interface CompleteProps {
 
 export default function OnboardingComplete(props: CompleteProps) {
   const { profilePic, name, bio, tags } = props;
+  const router = useRouter();
   return (
+    <>
     <main className={styles.container}>
       <h3 style={{ color: "white" }}>
         Congratulations! You’ve completed your profile! Time to start applying!
@@ -34,5 +38,15 @@ export default function OnboardingComplete(props: CompleteProps) {
         </section>
       </div>
     </main>
+    <div className={styles.buttonContainer}>
+          <button
+            type="button"
+            className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
+            onClick={() => router.push('/')}
+          >
+            Next &raquo;
+          </button>
+        </div>
+    </>
   );
 }

@@ -4,14 +4,12 @@ import OnboardProgress from "../components/onboardprogress";
 import styles from "./Basic-Info.module.scss";
 import imageIcon from "../assets/image-icon.png";
 // this is the first 'page' of the onBoarding page
-export default function BasicInfo() {
+
+export default function BasicInfo(props: { handleNext: () => void, sendData: (test1: string, test2: string) => void}){
+  const { handleNext, sendData } = props;
   return (
     <div>
       <div className={styles.cpContainer}>
-        <h2 className={styles.cpHeader}>
-          <strong>Welcome! Let’s create your WaterWho profile! </strong>
-        </h2>
-        <OnboardProgress currentStep={1}></OnboardProgress>
         <div className={styles.cpBox}>
           <p className={styles.cpInstructionText}>
             Let’s fill out some basic information about yourself.
@@ -113,6 +111,7 @@ export default function BasicInfo() {
           <button
             type="button"
             className={`${styles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
+            onClick={() => sendData("1", "2")}
           >
             Next &raquo;
           </button>
