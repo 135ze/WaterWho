@@ -2,7 +2,7 @@
 import React from "react";
 import Image, { type StaticImageData } from "next/image";
 import styles from "./Complete.module.scss";
-import { Tag } from "../components/tag";
+import { Tag } from "../components/dashboard/tag";
 
 interface CompleteProps {
     // WHEN USING FILES INSTEAD OF IMPORTED IMAGE, CHANGE TO FILE

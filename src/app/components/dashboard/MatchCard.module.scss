@@ -1,0 +1,76 @@
+.cardContainer {
+  background-color: white;
+  height: 21em;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 7px 7px 5px var(--dark-blue-text);
+  overflow: hidden;
+}
+
+.cardImage {
+  border-radius: 15px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardImage img {
+  border-radius: 7px;
+  max-width: 100%;
+}
+
+.cardPrimaryLine {
+  margin-top: 19px;
+  color: var(--text-color-primary);
+  font-size: 1.2em;
+}
+
+.cardSecondaryLine {
+  color: var(--text-color-primary);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.cardContents {
+  transition: transform 0.3s ease;
+}
+
+.cardContents:hover {
+  transform: translateY(-10px);
+}
+.cardViewProfileButton {
+  display: none;
+  width: 100%;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  background-color: var(--round-button-inactive-background);
+  color: var(--round-button-inactive-text);
+  transition: opacity 0.3s ease;
+}
+
+
+.cardContainer:hover .cardViewProfileButton {
+  display: inline-block;
+}
+
+.cardViewProfileButton:hover {
+  background-color: var(--round-button-active-background);
+  color: var(--body-color-primary) !important
+}
+
+@media only screen and (max-width: 767px) {
+  .cardViewProfileButton {
+    display: inline-block !important;
+  }
+  
+  .cardContainer {
+    height: 24em;
+  }
+
+  .cardContents:hover {
+    transform: none;
+  }
+}

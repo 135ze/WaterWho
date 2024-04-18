@@ -3,8 +3,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Application.module.scss";
 import Image from "next/image";
-import { Navbar } from "../components/navbar";
-import OnboardProgress from "../components/onboardprogress";
 import { useDropzone } from "react-dropzone";
 
 import remove from "../assets/remove.png";
