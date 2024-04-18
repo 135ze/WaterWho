@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation'
 import errorImage from "../assets/sadpiplup.jpeg";
 import styles from "./fallback.module.scss";
-import { Navbar } from "../components/navbar";
+import { Navbar } from "../components/navbar/navbar";
 
 export default function Custom404() {
   const router = useRouter()
