@@ -23,7 +23,7 @@ export default function Home() {
           <div className="d-flex flex-row-reverse">
             <div className="btn-group">
               <button
-                className={`btn btn-md mx-2 rounded ${styles.accountButton}`}
+                className={`btn rounded ${styles.accountButton}`}
                 role="button"
               >
                 <p className="m-1">
@@ -31,7 +31,7 @@ export default function Home() {
                 </p>
               </button>
               <button
-                className={`btn btn-md mx-2 rounded ${styles.accountButton}`}
+                className={`btn rounded ${styles.accountButton}`}
                 role="button"
               >
                 <p className="m-1">
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className={`text-center text-md ${styles.header}`}>WaterWho?</div>
+      <div className={`text-center ${styles.header}`}>WaterWho?</div>
       <div className={`text-center ${styles.subheader}`}>
         who will YOU meet?
       </div>
@@ -92,6 +92,11 @@ export default function Home() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </div>
+
+      <div className={`${styles.iconsWrapper}`}>
+        
+      </div>
+
     </div>
   );
 }

@@ -7,6 +7,8 @@
 .accountButton {
   background-color: var(--landing-button-inactive-background);
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .accountButton:hover {
@@ -15,15 +17,17 @@
 
 .header {
   color: white;
-  padding-top: 1em;
-  font-size: 6.5rem;
+  padding-top: 1.1em;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 10vw;
   font-weight: bold;
   text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.25);
 }
 
 .subheader {
   color: white;
-  font-size: 2em;
+  font-size: 3vw;
   font-weight: bold;
   text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.25);
 }
@@ -35,26 +39,29 @@
 
 .sectionHeader {
   color: white;
-  font-size: 2.2em;
+  font-size: 2.8vw;
   font-weight: bold;
   text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.25);
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 2.7em;
+  margin-right: 5em;
 }
 
 .sectionDescription {
   color: white;
-  font-size: 1em;
+  font-size: 1.5vw;
   font-weight: 500;
-  padding-left: 6.8em;
-  padding-right: 6.8em;
   padding-bottom: 3em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 // Card Carousel
 .cardSwiperWrapper {
   display: flex;
   justify-content: center;
+  padding-top: 2vh;
   padding-bottom: 5vh;
 }
 
@@ -90,12 +97,14 @@
   width: 14vw;
   background-color: white;
   border-radius: 2vw;
+  z-index: 10;
+  box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.25);
 }
 
 .smallCard {
   width: 10vw;
-  left: 2vw;
-  top: 4vh;
+  left: 15%;
+  top: 15%;
   border-radius: 2vw;
   box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.25);
 }
@@ -103,17 +112,17 @@
 /* Default Card Positioning */
 
 .bigCard:nth-child(1) {
-  background-image: url("./assets/carouselCards/pose.jpg");
+  background-image: url("./assets/carouselCards/flower.jpg");
 }
 
 .smallCard:nth-child(2) {
   background-image: url("./assets/carouselCards/beach.jpg");
-  transform: rotate(-5deg);
+  transform: rotate(-1deg);
 }
 
 .smallCard:nth-child(3) {
   background-image: url("./assets/carouselCards/dog.jpg");
-  transform: rotate(-10deg);
+  transform: rotate(-1deg);
 }
 
 .smallCard:nth-child(4) {
@@ -122,7 +131,7 @@
 }
 
 .smallCard:nth-child(5) {
-  background-image: url("./assets/carouselCards/flower.jpg");
+  background-image: url("./assets/carouselCards/pose.jpg");
   transform: rotate(-1deg);
 }
 
@@ -147,25 +156,31 @@
 }
 
 .cardGroup:hover > .smallCard:nth-child(2) {
-  transform: translate(-25%) rotate(-8deg);
+  transform: translate(-350%) rotate(-20deg);
 }
 
 .cardGroup:hover > .smallCard:nth-child(3) {
-  transform: translate(25%) rotate(8deg);
+  transform: translate(-250%) rotate(15deg);
 }
 
 .cardGroup:hover > .smallCard:nth-child(4) {
-  transform: translate(75%) rotate(24deg);
+  transform: translate(-150%) rotate(-30deg);
 }
 
 .cardGroup:hover > .smallCard:nth-child(5) {
-  transform: translate(200%) rotate(-15deg);
+  transform: translate(150%) rotate(-24deg);
 }
 
 .cardGroup:hover > .smallCard:nth-child(6) {
-  transform: translate(160%) rotate(15deg);
+  transform: translate(250%) rotate(15deg);
 }
 
 .cardGroup:hover > .smallCard:nth-child(7) {
-  transform: translate(-200%) rotate(15deg);
+  transform: translate(350%) rotate(-24deg);
 }
+
+.iconsWrapper {
+  height: 20vh;
+}
+
+// .iconCard {}
