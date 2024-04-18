@@ -4,74 +4,35 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "sqlite"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
-enum Mbti {
-    INTJ
-    INTP
-    ENTJ
-    ENTP
-    INFJ
-    INFP
-    ENFJ
-    ENFP
-    ISTJ
-    ISFJ
-    ESTJ
-    ESFJ
-    ISTP
-    ISFP
-    ESTP
-    ESFP
-}
-
-enum RelationshipStatus {
-    None
-    Pending
-    Dating
-}
-
-enum ApplicationStatus {
-    None
-    Pending
-    Rejected
-    Accepted
-}
-
-enum ImageType {
-    PDF 
-    PNG 
-    Other
-}
-
-enum SocialType {
-    Instagram
-    Facebook
-    Github
-    Discord
-}
-
 model UserProfile {
-    userID Int @id 
-    firstName String
-    lastName String
-    projectedGraduationDate DateTime
-    mbti Mbti
-    genderIdentity String
-    sexuality String
-    preferredGender String
-    dateOfBirth DateTime
-    height Int
-    nextTerm1 String
-    nextTerm2 String
-    nextTerm3 String
-    cityOfResidence String
-    provinceOfResidence String
-    accountCreatedDate DateTime
-    @@index([userID])
+    UserID Int @id 
+    Name String
+    DateOfBirth String
+    Gender String
+    SexualOrientation String
+    Height Int
+    School String
+    YearAndMajor String
+    Location String
+    CurrentStudyTerm String
+    Mbti Int
+    Tags String 
+    PhoneNumber String
+    Discord String 
+    Instagram String
+    PersonalDescription String 
+    RelationshipStyle String 
+    BenefitsAndCompensation String 
+    Interests String 
+    DealBreakers String 
+    DesiredTraits String
+    AccountCreatedDate DateTime
+    @@index([UserID])
 }
 
 model Documents {
@@ -81,8 +42,8 @@ model Documents {
 }
 
 model Images {
-    imageOwnerID Int
-    imageType ImageType
+    imageOwnerID Int 
+    imageType Int
     imageLink String
     @@unique([imageOwnerID, imageType, imageLink])
 }
@@ -93,22 +54,20 @@ model Applications {
     resume String
     coverLetter String
     letterOfRecommendation String
-    applicationStatus ApplicationStatus @default(None)
-    rankFoward Int
-    rankBackward Int 
+    applicationStatus Int
     @@unique([applicantID, receiverID])
 }
 
 model Relationship {
     userOneID Int
     userTwoID Int
-    relationshipStatus RelationshipStatus @default(None)
+    relationshipStatus Int @default(0)
     @@unique([userOneID, userTwoID])
 }
 
 model Socials {
     userId Int
-    socialType SocialType
+    socialType Int
     socialLink String
     @@unique([userId, socialType])
 }

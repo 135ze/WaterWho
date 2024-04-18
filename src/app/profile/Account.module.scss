@@ -1,0 +1,46 @@
+.profilePic{
+    width: 10em;
+    height: 10em;
+    background-color: orange;
+}
+
+.firstSectionContainer{
+    display:flex;
+    margin-top: 2em;
+    margin-left: 5em;
+}
+
+.description{
+    margin-left: 3em;
+    font-size: clamp(18px, 2vw, 30px);
+}
+
+.applyButton {
+    margin-top: 1em;
+    font-weight: 300;
+    border-radius: 12px;
+    padding: 10px 20px  10px 20px ;
+    font-family: 'Jost', sans-serif;
+    margin-right: clamp(10px, 2vw, 15px);
+}
+
+.shortListButton{
+    margin-top: 1em;
+    font-weight: 300;
+    border-radius: 12px;
+    padding: 10px 20px  10px 20px ;
+    font-family: 'Jost', sans-serif;
+    margin-right: clamp(10px, 2vw, 15px);
+}
+
+.postingInformation{
+    padding: 10px 20px  10px 20px ;
+    margin-top: 2em;
+    margin-left: 1vw;
+    border-radius: 10px;
+    width: 98vw;
+    font-size: clamp(18px, 1vw, 30px);
+    font-family: 'Jost', sans-serif;
+    color: white;
+    background-color: #437FC5;
+}

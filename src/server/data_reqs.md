@@ -52,49 +52,60 @@ rejected applications
 - ranking after
 - date of expiry
 
-# Base Schema:
+## Base Schema:
 
-UserProfile: PK: (ID)
-ID
-Name
-Year
-Term
-Program
-Gender Identity
-Gender Interested
-Age
-Height
-Sequence (next 3 terms)
-Hometown
-WorkHistory ??? (don't understand this field)
+#UserProfile: PK: (ID) : Changed this almost completely. Update once backend update is done.\
 
-Documents: PK: (documentID)
-documentID
-user
-documentType
-Link
+UserID: Int @id \
+Name: String\
+DateOfBirth: String\
+Gender: String\
+SexualOrientation: String\
+Height: Int\
+School: String\
+YearAndMajor: String\
+Location: String\
+CurrentStudyTerm: String\
+Mbti: Mbti\
+Tags: String of Integers, separated by comma\
+PhoneNumber: String\
+Discord: String \
+Instagram: String\
+PersonalDescription: String (Char Limit 280) \
+RelationshipStyle: String (Char Limit 280) \
+BenefitsAndCompensation: String (Char Limit 280) \
+Interests: String (Char Limit 100) \
+DealBreakers: String (Char Limit 100) \
+DesiredTraits: String (Char Limit 100) \
+accountCreatedDate DateTime\
 
-Images: PK: none
-imageLink
-TypeOfImage
-User
+# Documents: PK: (documentID)
+documentID\
+user\
+documentType\
+Link\
 
-Applications: PK: (Applicant + Receiver)
-Applicant
-Receiver
-Resume
-CoverLetter
-LOR
-ApplicationStatus
+Images: PK: none\
+imageLink\
+TypeOfImage\
+User\
 
-Relationship: PK: (personOne, personTwo)
-personOne
-personTwo
-rankFwd
-rankBwd
-status 
+Applications: PK: (Applicant + Receiver)\
+Applicant\
+Receiver\
+Resume\
+CoverLetter\
+LOR\
+ApplicationStatus\
 
-Socials: PK: (userId + socialType)
-userid
-socialType
-socialLink
+Relationship: PK: (personOne, personTwo)\
+personOne\
+personTwo\
+rankFwd\
+rankBwd\
+status \
+
+Socials: PK: (userId + socialType)\
+userid\
+socialType\
+socialLink\

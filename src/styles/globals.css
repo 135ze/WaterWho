@@ -33,6 +33,20 @@ body {
   --dark-blue-text: #2F527B;
   --landing-button-inactive-background: white;
   --landing-button-active-background: #67A3EB;
+  /* Simp */
+  --tag-one-colour: #E3F4FC;
+  /* Cook */
+  --tag-two-colour: #FFEA96;
+  /* Soundcloud Rapper */
+  --tag-three-colour: #E3FCED;
+  /* Certified_Gamer */
+  --tag-four-colour: #B3D6FF;
+  /* FAANG  */
+  --tag-five-colour: #A3F1F6;
+  /* DTF  */
+  --tag-six-colour:#FFC4D9;
+  /* CS Nerd */
+  --tag-seven-colour:#FFD29D; 
 }
 
 a {
@@ -99,5 +113,3 @@ a {
 .text-primary {
   color: var(--dark-blue-text) !important;
 }
-
-
