@@ -112,8 +112,7 @@ export default function BasicInfo() {
         <div className={styles.buttonContainer}>
           <button
             type="button"
-            className={`px-4 rounded-3 btn btn-primary mx-3`}
-            id="nextButton"
+            className={`${styles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
           >
             Next &raquo;
           </button>
