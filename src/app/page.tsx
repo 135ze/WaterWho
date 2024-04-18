@@ -94,7 +94,9 @@ export default function Home() {
       </div>
 
       <div className={`${styles.iconsWrapper}`}>
-        
+        <div className={`${styles.iconCard}`}></div>
+        <div className={`${styles.iconCard}`}></div>
+        <div className={`${styles.iconCard}`}></div>
       </div>
 
     </div>
