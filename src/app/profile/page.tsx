@@ -6,7 +6,7 @@ import Link from "next/link";
 import { api } from "~/trpc/react";
 import styles from "./Account.module.scss";
 import { SignIn,  useUser } from "@clerk/nextjs";
-import { Navbar } from "../components/navbar";
+import { Navbar } from "../components/navbar/navbar";
 
 
 export default function Home() {
