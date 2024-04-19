@@ -55,7 +55,9 @@
   padding: 20px;
   justify-content: center;
   gap: 20px;
-  overflow: scroll;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: white var(--body-color-primary) ;
 }
 
 .photo {
@@ -116,6 +118,12 @@
   justify-content: flex-end;
   width: 90%;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1400px){
+  .photosContainer {
+    justify-content: left;
+  }
 }
 
 @media screen and (max-width: 768px) {

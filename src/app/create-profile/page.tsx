@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import OnboardProgress from "../components/onboardprogress";
+import OnboardProgress from "../components/onboarding/onboardprogress";
 import BasicInfo from "./basic-info";
 import OnboardingApplication from "./application";
 import OnboardingComplete from "./complete";
@@ -46,6 +46,10 @@ export default function Home() {
     setData({...data, ...newData});
   }
 
+  const handleChange = (step: number) => {
+    setCurrentStep(step);
+  }
+
   useEffect(() => {
     console.log(data);
   }, [data])
@@ -58,7 +62,7 @@ export default function Home() {
     <Navbar />
     <main className={styles.main}>
     <h3>Welcome! Let&apos;s create your WaterWho profile!</h3>
-    <OnboardProgress currentStep={currentStep} />
+    <OnboardProgress currentStep={currentStep} returnToBasic={() => setCurrentStep(1)} returnToApp={() => setCurrentStep(2)}/>
     {currentStep === 1 && <BasicInfo handleNext={() => setCurrentStep(currentStep + 1)} sendData={confirmData}/>}
     {currentStep === 2 && <OnboardingApplication handleNext={() => setCurrentStep(currentStep + 1)} handleBack={() => setCurrentStep(currentStep - 1)} sendData={confirmData}/>}
     {currentStep === 3 && <OnboardingComplete profilePic={data.profilePhoto} name={data.displayName} bio={data.yearAndMajor} tags={["Certified_Gamer", "SoundCloud_Rapper", "Cooks", "Simp", "FAANG", "DTF"]} handleBack={() => setCurrentStep(currentStep - 1)}/> }
