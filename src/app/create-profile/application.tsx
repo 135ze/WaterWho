@@ -60,21 +60,23 @@ function ImageDrop(props: { file: File | undefined; onClick: () => void }) {
 
 export default function OnboardingApplication(props: {
   handleNext: () => void;
+  handleBack: () => void;
+  sendData: ({}) => void;
 }) {
-  const { handleNext } = props;
-  const [about, setAbout] = useState({
+  const { handleNext, handleBack, sendData } = props;
+  const [data, setData] = useState({
     employer: "",
     benefits: "",
     position: "",
+    interests: "",
+    dealbreakers: "",
+    expectations: "",
+    traits: "",
   });
   const [photos, setPhotos] = useState<File[]>([]);
   const [expandedImage, setExpandedImage] = useState<File | undefined>(
     undefined
   );
-
-  useEffect(() => {
-    console.log(about);
-  }, [about]);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     console.log(acceptedFiles);
@@ -105,19 +107,19 @@ export default function OnboardingApplication(props: {
             label="About the Employer"
             placeholder="Talk about yourself!"
             multiline={true}
-            onChange={(e) => setAbout({ ...about, employer: e.target.value })}
+            onChange={(e) => setData({ ...data, employer: e.target.value })}
           />
           <AboutQuestion
             label="Benefits and Compensation"
             placeholder="What do you have to offer?"
             multiline={true}
-            onChange={(e) => setAbout({ ...about, benefits: e.target.value })}
+            onChange={(e) => setData({ ...data, benefits: e.target.value })}
           />
           <AboutQuestion
             label="Position Start Date & Duration"
             placeholder="What’s your relationship style? What kind of person are you looking for?"
             multiline={true}
-            onChange={(e) => setAbout({ ...about, position: e.target.value })}
+            onChange={(e) => setData({ ...data, position: e.target.value })}
           />
         </div>
       </section>
@@ -193,42 +195,44 @@ export default function OnboardingApplication(props: {
           <AboutQuestion
             label="Interests"
             placeholder="List out the things you enjoy!"
-            onChange={(e) => setAbout({ ...about, employer: e.target.value })}
+            onChange={(e) => setData({ ...data, interests: e.target.value })}
           />
           <AboutQuestion
             label="Dealbreakers"
             placeholder="List out the things you cannot tolerate!"
-            onChange={(e) => setAbout({ ...about, benefits: e.target.value })}
+            onChange={(e) => setData({ ...data, dealbreakers: e.target.value })}
           />
           <AboutQuestion
             label="Relationship Expectations"
             placeholder="Talk about your dating style!"
-            onChange={(e) => setAbout({ ...about, position: e.target.value })}
+            onChange={(e) => setData({ ...data, expectations: e.target.value })}
           />
           <AboutQuestion
             label="Desired Traits"
             placeholder="List out the things you look for in a person!"
-            onChange={(e) => setAbout({ ...about, position: e.target.value })}
+            onChange={(e) => setData({ ...data, traits: e.target.value })}
           />
         </div>
       </section>
       <div className={styles.buttonContainer}>
-      <button
+        <button
           type="button"
           className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-          onClick={() => handleNext()}
+          onClick={() => handleBack()}
         >
           &laquo; Back
         </button>
-      <button
+        <button
           type="button"
           className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-          onClick={() => handleNext()}
+          onClick={() => {
+            handleNext();
+            sendData(data);
+          }}
         >
           Next &raquo;
         </button>
       </div>
-        
     </>
   );
 }

@@ -18,20 +18,25 @@ import { SignIn, useUser } from "@clerk/nextjs";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [test, setTest] = useState({test1: "test1", test2: "test2"})
+  const [data, setData] = useState({});
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
   }
-  noStore();
+  const handleBack = () => {
+    setCurrentStep(currentStep - 1);
+  }
 
-  const temp = (test1: string, test2: string) => {
-    setTest({test1: test1, test2: test2})
+  const confirmData = (newData: object) => {
+    setData({...data, ...newData});
   }
 
   useEffect(() => {
-    console.log(test)
-  }, [test])
+    console.log(data);
+  }, [data])
+
+  noStore();
+
 
   return (
     <>
@@ -39,8 +44,8 @@ export default function Home() {
     <main className={styles.main}>
     <h3>Welcome! Let&apos;s create your WaterWho profile!</h3>
     <OnboardProgress currentStep={currentStep} />
-    {currentStep === 1 && <BasicInfo handleNext={handleNext} sendData={temp}/>}
-    {currentStep === 2 && <OnboardingApplication handleNext={handleNext}/> }
+    {currentStep === 1 && <BasicInfo handleNext={handleNext} sendData={confirmData}/>}
+    {currentStep === 2 && <OnboardingApplication handleNext={handleNext} handleBack={handleBack} sendData={confirmData}/>}
     {currentStep === 3 && <OnboardingComplete profilePic={hehe} name={"piplup"} bio={"certified 2a guy"} tags={["Certified_Gamer", "SoundCloud_Rapper", "Cooks", "Simp", "FAANG", "DTF"]}/> }
     </main>
     </>

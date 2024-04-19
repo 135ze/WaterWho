@@ -5,7 +5,12 @@ import styles from "./Basic-Info.module.scss";
 import imageIcon from "../assets/image-icon.png";
 // this is the first 'page' of the onBoarding page
 
-export default function BasicInfo(props: { handleNext: () => void, sendData: (test1: string, test2: string) => void}){
+
+
+export default function BasicInfo(props: {
+  handleNext: () => void;
+  sendData: ({}) => void;
+}) {
   const { handleNext, sendData } = props;
   return (
     <div>
@@ -111,7 +116,10 @@ export default function BasicInfo(props: { handleNext: () => void, sendData: (te
           <button
             type="button"
             className={`${styles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-            onClick={() => sendData("1", "2")}
+            onClick={() => {
+              handleNext();
+              sendData({"name": "test"});
+            }}
           >
             Next &raquo;
           </button>
