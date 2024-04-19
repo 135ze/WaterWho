@@ -1,0 +1,99 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  width: 80vw;
+  max-width: 1000px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  padding-right: 0;
+  height: 100%;
+}
+
+.wrapper:after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  left: -25px;
+  border-top: solid 22px white;
+  border-left: solid 22px white;
+  border-top-left-radius: 10px;
+
+  border-right: solid 22px transparent;
+  border-bottom: solid 22px transparent;
+  transform: rotate(135deg);
+}
+
+.wrapper:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  right: -20px;
+  border-top: solid 22px currentColor;
+  border-left: solid 22px currentColor;
+  border-top-left-radius: 10px;
+
+  border-right: solid 22px transparent;
+  border-bottom: solid 22px transparent;
+  transform: rotate(135deg);
+  z-index: 1;
+}
+
+.text {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 12px;
+  }
+  .wrapper:after {
+    left: -22px;
+    border-top: solid 19.9px white;
+    border-left: solid 19.9px white;
+    border-right: solid 19.9px transparent;
+    border-bottom: solid 19.9px transparent;
+  }
+  .wrapper:before {
+    right: -18px;
+    border-top: solid 19.9px currentColor;
+    border-left: solid 19.9px currentColor;
+    border-right: solid 19.9px transparent;
+    border-bottom: solid 19.9px transparent;
+  }
+}
+@media screen and (max-width: 450px) {
+    .text {
+        font-size: 8px;
+    }
+    .container {
+        gap: 10px;
+    }
+    .wrapper {
+        height: 50%;
+        padding-right: 5px;
+    }
+    .wrapper:after {
+        left: -15px;
+        border-top: solid 13.5px white;
+        border-left: solid 13.5px white;
+        border-right: solid 13.5px transparent;
+        border-bottom: solid 13.5px transparent;
+      }
+      .wrapper:before {
+        right: -11.5px;
+        border-top: solid 13.5px currentColor;
+        border-left: solid 13.5px currentColor;
+        border-right: solid 13.5px transparent;
+        border-bottom: solid 13.5px transparent;
+      }
+}

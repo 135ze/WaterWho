@@ -4,54 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "sqlite"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
-}
-
-enum Mbti {
-    INTJ
-    INTP
-    ENTJ
-    ENTP
-    INFJ
-    INFP
-    ENFJ
-    ENFP
-    ISTJ
-    ISFJ
-    ESTJ
-    ESFJ
-    ISTP
-    ISFP
-    ESTP
-    ESFP
-}
-
-enum RelationshipStatus {
-    None
-    Pending
-    Dating
-}
-
-enum ApplicationStatus {
-    None
-    Pending
-    Rejected
-    Accepted
-}
-
-enum ImageType {
-    PDF 
-    PNG 
-    Other
-}
-
-enum SocialType {
-    Instagram
-    Facebook
-    Github
-    Discord
 }
 
 model UserProfile {
@@ -65,7 +20,7 @@ model UserProfile {
     YearAndMajor String
     Location String
     CurrentStudyTerm String
-    Mbti Mbti
+    Mbti Int
     Tags String 
     PhoneNumber String
     Discord String 
@@ -88,7 +43,7 @@ model Documents {
 
 model Images {
     imageOwnerID Int 
-    imageType ImageType
+    imageType Int
     imageLink String
     @@unique([imageOwnerID, imageType, imageLink])
 }
@@ -99,20 +54,20 @@ model Applications {
     resume String
     coverLetter String
     letterOfRecommendation String
-    applicationStatus ApplicationStatus
+    applicationStatus Int
     @@unique([applicantID, receiverID])
 }
 
 model Relationship {
     userOneID Int
     userTwoID Int
-    relationshipStatus RelationshipStatus @default(None)
+    relationshipStatus Int @default(0)
     @@unique([userOneID, userTwoID])
 }
 
 model Socials {
     userId Int
-    socialType SocialType
+    socialType Int
     socialLink String
     @@unique([userId, socialType])
 }
