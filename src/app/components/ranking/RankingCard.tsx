@@ -20,7 +20,7 @@ export function RankingCard(props: RankingsCardProps) {
             <div className={`mx-3 mb-3 rounded-circle text-center ${styles.cardRanking}`}>
                 <h2 className={`${styles.cardRankingText}`}>{id}</h2>
             </div>
-            <button className={`btn btn-secondary ${styles.cardViewProfileButton}`}> View Profile </button>
+            <button className={`btn btn-secondary mt-2 ${styles.cardViewProfileButton}`}> View Profile </button>
         </div>
     </div>
 

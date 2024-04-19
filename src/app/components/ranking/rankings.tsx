@@ -71,8 +71,10 @@ export function Rankings() {
           ))}
           </div>
       </div>
-      <button className={`btn btn-secondary`}>Edit Rankings</button>
-      <button className={`btn btn-primary`}>Submit Rankings</button>
+      <div className={`d-flex flex-row-reverse ${styles.buttonContainer}`}>
+        <button className={`btn btn-primary `}>Submit Rankings</button>
+        <button className={`btn btn-secondary-grey mx-3`}>Edit Rankings</button>
+      </div>
     </div>
   );
 }

@@ -14,12 +14,16 @@
 .dmRankingsGrid {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 230px;
+    grid-auto-columns: 320px;
     gap: 2em; 
     overflow-x: scroll;
     justify-items: center;
     padding-bottom: 30px;;
     padding-right:10px;
+}
+
+.buttonContainer {
+    width: 100%;
 }
 
 .dmRankingsGrid::-webkit-scrollbar {
