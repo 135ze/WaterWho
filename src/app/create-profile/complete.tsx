@@ -1,21 +1,23 @@
 "use client"
 import React from "react";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import styles from "./Complete.module.scss";
 import buttonStyles from "./Basic-Info.module.scss";
 import { Tag } from "../components/dashboard/tag";
 import { useRouter } from 'next/navigation';
+import defaultPiplup from "../assets/sadpiplup.jpeg"
 
 interface CompleteProps {
     // WHEN USING FILES INSTEAD OF IMPORTED IMAGE, CHANGE TO FILE
-    profilePic: StaticImageData;
+    profilePic: File | null;
     name: string;
     bio: string;
     tags: string[];
+    handleBack: () => void;
 }
 
 export default function OnboardingComplete(props: CompleteProps) {
-  const { profilePic, name, bio, tags } = props;
+  const { profilePic, name, bio, tags, handleBack } = props;
   const router = useRouter();
   return (
     <>
@@ -25,7 +27,11 @@ export default function OnboardingComplete(props: CompleteProps) {
       </h3>
       <div className={styles.profileContainer}>
         <section className={styles.info}>
-          <Image src={profilePic} alt="profile" className={styles.profilePic} height={120} width={120} />
+          {profilePic ? (
+              <Image src={URL.createObjectURL(profilePic)} alt="profile" className={styles.profilePic} height={120} width={120} />
+            ) : (
+              <Image src={defaultPiplup} alt="profile" className={styles.profilePic} height={120} width={120} />
+            )}
           <div>
             <h3>{name}</h3>
             <p>{bio}</p>
@@ -39,14 +45,21 @@ export default function OnboardingComplete(props: CompleteProps) {
       </div>
     </main>
     <div className={styles.buttonContainer}>
-          <button
+        <button
+          type="button"
+          className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
+          onClick={() => handleBack()}
+        >
+          &laquo; Back
+        </button>
+        <button
             type="button"
             className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
             onClick={() => router.push('/')}
           >
             Next &raquo;
           </button>
-        </div>
+      </div>
     </>
   );
 }

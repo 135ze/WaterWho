@@ -18,7 +18,31 @@ import { SignIn, useUser } from "@clerk/nextjs";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({  displayName: "",
+    birthDate: "",
+    location: "",
+    gender: "",
+    sexualOrientation: "",
+    height: "",
+    religion: "",
+    university: "",
+    yearAndMajor: "",
+    studyTerm: "",
+    mbti: "",
+    tags: "",
+    phoneNumber: "",
+    discordUsername: "",
+    instagramUsername: "",
+    profilePhoto: null,
+    employer: "",
+    benefits: "",
+    position: "",
+    interests: "",
+    dealbreakers: "",
+    expectations: "",
+    traits: "",
+    photos: []
+  });
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
@@ -44,9 +68,9 @@ export default function Home() {
     <main className={styles.main}>
     <h3>Welcome! Let&apos;s create your WaterWho profile!</h3>
     <OnboardProgress currentStep={currentStep} />
-    {currentStep === 1 && <BasicInfo handleNext={handleNext} sendData={confirmData}/>}
-    {currentStep === 2 && <OnboardingApplication handleNext={handleNext} handleBack={handleBack} sendData={confirmData}/>}
-    {currentStep === 3 && <OnboardingComplete profilePic={hehe} name={"piplup"} bio={"certified 2a guy"} tags={["Certified_Gamer", "SoundCloud_Rapper", "Cooks", "Simp", "FAANG", "DTF"]}/> }
+    {currentStep === 1 && <BasicInfo handleNext={() => setCurrentStep(currentStep + 1)} sendData={confirmData}/>}
+    {currentStep === 2 && <OnboardingApplication handleNext={() => setCurrentStep(currentStep + 1)} handleBack={() => setCurrentStep(currentStep - 1)} sendData={confirmData}/>}
+    {currentStep === 3 && <OnboardingComplete profilePic={data.profilePhoto} name={data.displayName} bio={data.yearAndMajor} tags={["Certified_Gamer", "SoundCloud_Rapper", "Cooks", "Simp", "FAANG", "DTF"]} handleBack={() => setCurrentStep(currentStep - 1)}/> }
     </main>
     </>
   );

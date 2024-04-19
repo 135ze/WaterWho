@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "./Application.module.scss";
 import buttonStyles from "./Basic-Info.module.scss";
 import Image from "next/image";
@@ -74,9 +74,7 @@ export default function OnboardingApplication(props: {
     traits: "",
   });
   const [photos, setPhotos] = useState<File[]>([]);
-  const [expandedImage, setExpandedImage] = useState<File | undefined>(
-    undefined
-  );
+  const [expandedImage, setExpandedImage] = useState<File | undefined>(undefined);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     console.log(acceptedFiles);
@@ -227,7 +225,7 @@ export default function OnboardingApplication(props: {
           className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
           onClick={() => {
             handleNext();
-            sendData(data);
+            sendData({ ...data, photos });
           }}
         >
           Next &raquo;
