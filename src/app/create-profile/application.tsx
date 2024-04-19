@@ -58,6 +58,7 @@ function ImageDrop(props: { file: File | undefined; onClick: () => void }) {
   );
 }
 
+// this is the second 'page' of the onBoarding page
 export default function OnboardingApplication(props: {
   handleNext: () => void;
   handleBack: () => void;

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 import styles from "./Basic-Info.module.scss";
 import imageIcon from "../assets/image-icon.png";
-import e from "express";
 // this is the first 'page' of the onBoarding page
 
 function InputBox(props: {

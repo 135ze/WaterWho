@@ -6,8 +6,6 @@ import BasicInfo from "./basic-info";
 import OnboardingApplication from "./application";
 import OnboardingComplete from "./complete";
 
-import hehe from "../assets/sadpiplup.jpeg";
-
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 import { Navbar } from "../components/navbar/navbar";
@@ -43,13 +41,6 @@ export default function Home() {
     traits: "",
     photos: []
   });
-
-  const handleNext = () => {
-    setCurrentStep(currentStep + 1);
-  }
-  const handleBack = () => {
-    setCurrentStep(currentStep - 1);
-  }
 
   const confirmData = (newData: object) => {
     setData({...data, ...newData});

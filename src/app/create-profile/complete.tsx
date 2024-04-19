@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import defaultPiplup from "../assets/sadpiplup.jpeg"
 
 interface CompleteProps {
-    // WHEN USING FILES INSTEAD OF IMPORTED IMAGE, CHANGE TO FILE
     profilePic: File | null;
     name: string;
     bio: string;
@@ -16,6 +15,7 @@ interface CompleteProps {
     handleBack: () => void;
 }
 
+// This is the last 'page' of the onBoarding page
 export default function OnboardingComplete(props: CompleteProps) {
   const { profilePic, name, bio, tags, handleBack } = props;
   const router = useRouter();
