@@ -12,11 +12,14 @@ import { Navbar } from "../components/navbar/navbar";
 
 import { api } from "~/trpc/react";
 import styles from "./index.module.scss";
+import pageStyles from "./onboard.module.scss";
 import { SignIn, useUser } from "@clerk/nextjs";
+import { pages } from "next/dist/build/templates/app-page";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [data, setData] = useState({  displayName: "",
+  const [data, setData] = useState({
+    displayName: "",
     birthDate: "",
     location: "",
     gender: "",
@@ -39,34 +42,71 @@ export default function Home() {
     dealbreakers: "",
     expectations: "",
     traits: "",
-    photos: []
+    photos: [],
   });
 
   const confirmData = (newData: object) => {
-    setData({...data, ...newData});
-  }
+    setData({ ...data, ...newData });
+  };
 
   const handleChange = (step: number) => {
     setCurrentStep(step);
-  }
+  };
 
   useEffect(() => {
     console.log(data);
-  }, [data])
+  }, [data]);
 
   noStore();
 
-
   return (
     <>
-    <Navbar />
-    <main className={styles.main}>
-    <h3>Welcome! Let&apos;s create your WaterWho profile!</h3>
-    <OnboardProgress currentStep={currentStep} returnToBasic={() => setCurrentStep(1)} returnToApp={() => setCurrentStep(2)}/>
-    {currentStep === 1 && <BasicInfo handleNext={() => setCurrentStep(currentStep + 1)} sendData={confirmData}/>}
-    {currentStep === 2 && <OnboardingApplication handleNext={() => setCurrentStep(currentStep + 1)} handleBack={() => setCurrentStep(currentStep - 1)} sendData={confirmData}/>}
-    {currentStep === 3 && <OnboardingComplete profilePic={data.profilePhoto} name={data.displayName} bio={data.yearAndMajor} tags={["Certified_Gamer", "SoundCloud_Rapper", "Cooks", "Simp", "FAANG", "DTF"]} handleBack={() => setCurrentStep(currentStep - 1)}/> }
-    </main>
+      <Navbar />
+      <main className={styles.main}>
+        <h3>Welcome! Let&apos;s create your WaterWho profile!</h3>
+        <OnboardProgress
+          currentStep={currentStep}
+          returnToBasic={() => setCurrentStep(1)}
+          returnToApp={() => setCurrentStep(2)}
+        />
+        {currentStep === 1 && (
+          <div className={pageStyles.mainContainer}>
+            <BasicInfo
+              handleNext={() => setCurrentStep(currentStep + 1)}
+              sendData={confirmData}
+            />
+          </div>
+        )}
+
+        {currentStep === 2 && (
+          <div className={pageStyles.mainContainer}>
+            <OnboardingApplication
+              handleNext={() => setCurrentStep(currentStep + 1)}
+              handleBack={() => setCurrentStep(currentStep - 1)}
+              sendData={confirmData}
+            />
+          </div>
+        )}
+
+        {currentStep === 3 && (
+          <div className={pageStyles.mainContainer}>
+            <OnboardingComplete
+              profilePic={data.profilePhoto}
+              name={data.displayName}
+              bio={data.yearAndMajor}
+              tags={[
+                "Certified_Gamer",
+                "SoundCloud_Rapper",
+                "Cooks",
+                "Simp",
+                "FAANG",
+                "DTF",
+              ]}
+              handleBack={() => setCurrentStep(currentStep - 1)}
+            />
+          </div>
+        )}
+      </main>
     </>
   );
 }
