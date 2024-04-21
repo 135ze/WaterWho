@@ -12,7 +12,7 @@ import { Navbar } from "../components/navbar/navbar";
 
 import { api } from "~/trpc/react";
 import styles from "./index.module.scss";
-import pageStyles from "./onboard.module.scss";
+import pageStyles from "./Onboard.module.scss";
 import { SignIn, useUser } from "@clerk/nextjs";
 import { pages } from "next/dist/build/templates/app-page";
 
