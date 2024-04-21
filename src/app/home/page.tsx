@@ -8,7 +8,6 @@ import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.scss";
 import { DashboardMenu } from "../components/dashboard/dashboardmenu"
 import { Rankings } from "../components/ranking/rankings"
-import { Menu } from "../components/menu/menu"
 
 export default function MainPage({ params }: { params: { id: string } }) {
   noStore();
@@ -21,7 +20,6 @@ export default function MainPage({ params }: { params: { id: string } }) {
   return (
     <div>
       <Navbar></Navbar>
-      {/* <Menu></Menu> */}
       <div className={styles.accountContainer}>
         <h1 className={styles.accountHeader}>Welcome back, John!</h1>
         {/* Add in user name later based on login*/}
@@ -36,7 +34,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
           >
             Dashboard
           </button>
-          <button
+          {/*<button
             onClick={() => handleButtonClick("Interviews")}
             className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "Interviews"
@@ -45,7 +43,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
             }`}
           >
             Interviews
-          </button>
+          </button>*/}
           <button
             onClick={() => handleButtonClick("Rankings")}
             className={`btn btn-primary ${styles.accountButton} ${
@@ -72,11 +70,11 @@ export default function MainPage({ params }: { params: { id: string } }) {
             <DashboardMenu></DashboardMenu>
           </div>
         )}
-        {activeButton === "Interviews" && (
+        {/*activeButton === "Interviews" && (
           <div>
             <p>Interviews Content HERE (TODO)</p>
           </div>
-        )}
+        )*/}
         {activeButton === "Rankings" && (
           <div>
             <Rankings></Rankings>

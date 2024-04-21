@@ -2,6 +2,9 @@
     background-color: var(--menu-background);
     padding: 10px;
     width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
 }
 
 .menuTab{
@@ -12,5 +15,7 @@
 
 .menuContainer {
     background-color: var(--menu-background);
-    max-width: 400px;
+    width: fit-content;
+    top: calc(3em + 12px); /* this is so hacky im so sorry */
+    /*3 em is the height of the menu toggle, and 12px is the padding from navbar*/
 }
