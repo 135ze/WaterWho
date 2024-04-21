@@ -57,6 +57,7 @@ export function Rankings() {
   ];
 
   return (
+    <>
     <div className={styles.dm}>
       <div className={`${styles.dmBody}`}>
         <div className={`${styles.dmRankingsGrid}`}>
@@ -71,10 +72,12 @@ export function Rankings() {
           ))}
           </div>
       </div>
-      <div className={`d-flex flex-row-reverse ${styles.buttonContainer}`}>
-        <button className={`btn btn-primary `}>Submit Rankings</button>
-        <button className={`btn btn-secondary-grey mx-3`}>Edit Rankings</button>
-      </div>
+      
     </div>
+    <div className={`d-flex flex-row-reverse ${styles.buttonContainer}`}>
+      <button className={`btn btn-primary `}>Submit Rankings</button>
+      <button className={`btn btn-secondary-grey mx-3`}>Edit Rankings</button>
+    </div>
+    </>
   );
 }

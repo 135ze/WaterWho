@@ -36,47 +36,47 @@ model UserProfile {
 }
 
 model Documents {
-    documentID Int @id @default(autoincrement())
-    userID Int
-    link String
+    DocumentID Int @id @default(autoincrement())
+    UserID Int
+    Link String
 }
 
 model Images {
-    imageOwnerID Int 
-    imageType Int
-    imageLink String
-    @@unique([imageOwnerID, imageType, imageLink])
+    ImageOwnerID Int 
+    ImageType Int
+    ImageLink String
+    @@unique([ImageOwnerID, ImageType, ImageLink])
 }
 
 model Applications {
-    applicantID Int
-    receiverID Int
-    resume String
-    coverLetter String
-    letterOfRecommendation String
-    applicationStatus Int
-    @@unique([applicantID, receiverID])
+    ApplicantID Int
+    ReceiverID Int
+    Resume String
+    CoverLetter String
+    LetterOfRecommendation String
+    ApplicationStatus Int
+    @@unique([ApplicantID, ReceiverID])
 }
 
 model Relationship {
-    userOneID Int
-    userTwoID Int
-    relationshipStatus Int @default(0)
-    @@unique([userOneID, userTwoID])
+    UserOneID Int
+    UserTwoID Int
+    RelationshipStatus Int @default(0)
+    @@unique([UserOneID, UserTwoID])
 }
 
 model Socials {
-    userId Int
-    socialType Int
-    socialLink String
-    @@unique([userId, socialType])
+    UserID Int
+    SocialType Int
+    SocialLink String
+    @@unique([UserID, SocialType])
 }
 
 model Notifications {
-    receiverID Int
-    notificationID Int @id @default(autoincrement())
-    title String
-    message String 
-    timeCreated DateTime
-    status Boolean
+    ReceiverID Int
+    NotificationID Int @id @default(autoincrement())
+    Title String
+    Message String 
+    TimeCreated DateTime
+    Status Boolean
 }
