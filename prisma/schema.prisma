@@ -48,6 +48,15 @@ model Images {
     @@unique([ImageOwnerID, ImageType, ImageLink])
 }
 
+
+// Application Status: 
+//  0 - applied + rejected
+// -1 - blacklisted
+//  1 - matched but not ranked (do we need to care)
+//  2 - ranking process (possibly Rank will have a value)
+//  3 - final match received
+//  4 - ARE YOU ALLOWED TO FINAL MATCH WITH MULTIPLE PEOPLE?
+//  10 - Completed
 model Applications {
     ApplicantID Int
     ReceiverID Int
@@ -55,13 +64,18 @@ model Applications {
     CoverLetter String
     LetterOfRecommendation String
     ApplicationStatus Int
+    Rank Int 
     @@unique([ApplicantID, ReceiverID])
 }
 
+// Relationship Status:
+// 0 - blocked
+// 1 - in a relationship (dating)
 model Relationship {
     UserOneID Int
     UserTwoID Int
-    RelationshipStatus Int @default(0)
+    Blocked Boolean
+    InRelationship Boolean
     @@unique([UserOneID, UserTwoID])
 }
 
