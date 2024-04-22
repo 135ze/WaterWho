@@ -17,7 +17,7 @@ export default function Custom404() {
           <h1>Uh oh!</h1>
           <h4>We couldn&apos;t find the page you were looking for :(</h4>
           <p style={{marginTop: "10px"}}>lmao loser</p>
-          <button className={styles.button} onClick={() => router.push('/')}>
+          <button className={styles.button} onClick={() => router.push('/home')}>
             Return Home
           </button>
         </div>
