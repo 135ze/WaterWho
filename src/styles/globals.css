@@ -16,6 +16,10 @@ body {
   --square-button-blue-active: #2F527B;
   --square-button-blue-hover: #3E72B0;
   --square-button-blue-text-color: white; 
+  --square-button-grey-inactive: #D9D9D9;
+  --square-button-grey-active: ;
+  --square-button-grey-hover: #BEBEBE;
+  --square-button-grey-text-color: #000000;
   --navbar-background-color: rgba(0, 0, 0, 0.72);
   --text-color-secondary: white;
   --text-color-primary: black;
@@ -71,6 +75,14 @@ a {
   background-color: var(--square-button-blue-hover);
 }
 
+.btn-secondary-grey {
+  border-color: var(--square-button-grey-inactive);
+  background-color: var(--square-button-grey-inactive);
+}
+.btn-secondary-grey:hover {
+  background-color: var(--square-button-grey-hover);
+}
+
 /* Override default button colours */
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active {
@@ -94,6 +106,8 @@ a {
 .btn-tertiary:hover {
   background-color: var(--browse-card-button);
 }
+
+
 
 
 .hover {

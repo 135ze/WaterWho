@@ -101,10 +101,10 @@ export const profileRouter = createTRPCRouter({
     .input(z.object({UserID: z.number()}))
     .query(async ({ctx, input}) => {
         const ret = await ctx.db.applications.findMany ({
-          where: { applicantID: input.UserID,
-                  applicationStatus:  1
+          where: { ApplicantID: input.UserID,
+                  ApplicationStatus:  1
                   },
-          select: {receiverID: true}
+          select: {ReceiverID: true}
         })
         return ret;
     })

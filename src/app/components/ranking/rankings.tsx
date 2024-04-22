@@ -57,8 +57,10 @@ export function Rankings() {
   ];
 
   return (
+    <>
     <div className={styles.dm}>
-      <div className={`${styles.dmBody} ${styles.dmRankingsGrid}`}>
+      <div className={`${styles.dmBody}`}>
+        <div className={`${styles.dmRankingsGrid}`}>
         {RankingsData.map((ranking) => (
             <RankingCard
               key={ranking.id}
@@ -68,9 +70,14 @@ export function Rankings() {
               term={ranking.term}
             />
           ))}
+          </div>
       </div>
-      <button className={`btn btn-secondary`}>Edit Rankings</button>
-      <button className={`btn btn-primary`}>Submit Rankings</button>
+      
     </div>
+    <div className={`d-flex flex-row-reverse ${styles.buttonContainer}`}>
+      <button className={`btn btn-primary `}>Submit Rankings</button>
+      <button className={`btn btn-secondary-grey mx-3`}>Edit Rankings</button>
+    </div>
+    </>
   );
 }
