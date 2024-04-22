@@ -48,11 +48,7 @@ export default function Home() {
   const confirmData = (newData: object) => {
     setData({ ...data, ...newData });
   };
-
-  const handleChange = (step: number) => {
-    setCurrentStep(step);
-  };
-
+  
   useEffect(() => {
     console.log(data);
   }, [data]);
