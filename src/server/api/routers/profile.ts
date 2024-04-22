@@ -104,7 +104,7 @@ export const profileRouter = createTRPCRouter({
           where: { ApplicantID: input.UserID,
                   ApplicationStatus:  1
                   },
-          select: { ReceiverID: true }
+          select: {ReceiverID: true}
         })
         return ret;
     })
