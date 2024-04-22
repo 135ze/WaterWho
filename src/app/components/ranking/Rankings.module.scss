@@ -1,21 +1,41 @@
 .dm {
-    height: calc(100vh - 300px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
+    height: calc(100vh - 100px); /* I am kind of stupid, so this is being calculated using 100% of screen - each size of other elements*/
 }
 
 .dmBody {
+    
     background-color: var(--body-color-primary);
-    height: calc(100%);
     padding: 30px;
     border-radius: 10px;
-    overflow-y: auto;
-    margin-top: 20px;
+    overflow-x: auto;
+    margin: 20px 0;
 }
 
 .dmRankingsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: 40vh;
     gap: 2em; 
-    
+    overflow-x: scroll;
     justify-items: center;
+    padding-bottom: 30px;;
+    padding-right:10px;
 }
 
+.buttonContainer {
+    width: 100%;
+}
+
+.dmRankingsGrid::-webkit-scrollbar {
+    scrollbar-width: thin;
+}
+
+.dmRankingsGrid::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.dmRankingsGrid::-webkit-scrollbar-thumb {
+    width: 5px;    
+    border-radius: 10px;
+    background-color:#fff;
+}
