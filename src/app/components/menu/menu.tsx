@@ -19,7 +19,6 @@ export function Menu() {
         >
           <Image src={menuOpen ? cross : menuImage} alt="Menu" width={menuOpen ? 20 : 25} height={menuOpen ? 20: 25} />
         </div>
-        <div className={styles.menuTab}></div>
       </div>
       {menuOpen && (
         <div className={`position-absolute ${styles.menuContainer}`}>
@@ -44,7 +43,7 @@ export function Menu() {
               >
                 <div className={`hover accordion-body text-primary`}>
                   <p className="mb-0 ms-2"> Dashboard </p>
-                  <p className="mt-3 mb-0 ms-2"> Interviews </p>
+                  {/*<p className="mt-3 mb-0 ms-2"> Interviews </p>*/}
                   <p className="mt-3 mb-0 ms-2"> Rankings </p>
                   <p className="mt-3 mb-0 ms-2"> My Applications </p>
                 </div>
