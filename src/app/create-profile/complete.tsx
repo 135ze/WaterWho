@@ -55,7 +55,7 @@ export default function OnboardingComplete(props: CompleteProps) {
         <button
             type="button"
             className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-            onClick={() => router.push('/')}
+            onClick={() => router.push('/home')}
           >
             Next &raquo;
           </button>
