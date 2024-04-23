@@ -14,7 +14,7 @@ export function ApplicantCard(props: BrowseCardProp) {
 
   return (
     <div
-      className={`d-flex justify-content-between rounded-5 mb-3 ${styles.bcContainer}`}
+      className={`justify-content-between rounded-5 mb-3 ${styles.bcContainer}`}
     >
       <div className="d-flex">
         <div className={styles.cardImage}>
@@ -47,6 +47,7 @@ export function ApplicantCard(props: BrowseCardProp) {
           </div>
         </div>
       </div>
+      <div>Speed Note</div>
     </div>
   );
 }

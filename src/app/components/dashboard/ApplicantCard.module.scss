@@ -11,7 +11,11 @@
   border: 1px solid var(--text-color-secondary);
   border-radius: 50%;
 }
-
+.applicantInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .btnAccept {
   background-color: var(--applicant-button-accept) !important;
   border: var(--applicant-button-accept) !important;
