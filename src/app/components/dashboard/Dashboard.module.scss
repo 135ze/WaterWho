@@ -1,64 +1,76 @@
-
 .dm {
-    height: calc(100vh - 300px) ; /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
+  height: calc(
+    100vh - 300px
+  ); /* I am kind of stupid, so this is being calculatted using 100% of screen - each size of other elements*/
 }
 .dmContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: var(--body-color-primary);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 120px;
-    border-radius: 10px;
-    justify-content: space-between
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--body-color-primary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  border-radius: 10px;
+  justify-content: space-between;
 }
 
 .dmButton {
-    font-size: clamp(10px, 1vw,16px);
-    font-weight: 400;
-    font-family: 'Jost', sans-serif;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-right: clamp(10px, 2vw, 15px);
+  font-size: clamp(10px, 1vw, 16px);
+  font-weight: 400;
+  font-family: "Jost", sans-serif;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-right: clamp(10px, 2vw, 15px);
 }
 
 .dmWhiteButton:hover {
-    background-color: var(--round-button-active-background);
-    color: var(--round-button-active-text);
+  background-color: var(--round-button-active-background);
+  color: var(--round-button-active-text);
 }
 
 .dmNumMatchesText {
-    color: var(--text-color-secondary);
-    margin-bottom: 0px;
+  color: var(--text-color-secondary);
+  margin-bottom: 0px;
 }
 
 .dmWhiteButton {
-    background-color: var(--round-button-active-background);
-    color: var(--round-button-active-text);
+  background-color: var(--round-button-active-background);
+  color: var(--round-button-active-text);
 }
 
 .dmBody {
-    background-color: var(--body-color-primary);
-    height: calc(100% - 88px);
-    padding: 2em;
-    border-radius: 10px;
-    overflow-y: auto;
+  background-color: var(--body-color-primary);
+  height: calc(100% - 88px);
+  padding: 2em;
+  border-radius: 10px;
+  overflow-y: auto;
 }
 .dmMatchesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr)); /* Adjust the column width as needed */
-    gap: 2em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
-    overflow: auto;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(225px, 1fr)
+  ); /* Adjust the column width as needed */
+  gap: 2em; /* Only determines the gap between the rows; gap between cards is autoset based on card width*/
+  overflow: auto;
+  justify-items: center;
+}
+
+.dmApplicantsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 2em;
+  justify-items: center;
+  white-space: nowrap;
 }
 
 .dmNumberBubble {
-    background-color: white;    
+  background-color: white;
 }
 
 .dmSearch {
-    border-radius: 10px;
-    width: clamp(150px, 25vw, 300px);
-    box-shadow: 0 .25rem 0.25rem rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: clamp(150px, 25vw, 300px);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
 }

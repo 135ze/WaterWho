@@ -1,0 +1,36 @@
+.bcContainer {
+  background-color: var(--browse-card-background);
+  padding: 30px;
+  width: 100%;
+}
+
+.cardImage img {
+  max-width: 100%;
+  height: 150px;
+  border: 1px solid var(--text-color-secondary);
+  border-radius: 50%;
+}
+
+.btnAccept {
+  background-color: var(--applicant-button-accept) !important;
+  border: var(--applicant-button-accept) !important;
+  color: white;
+}
+
+.btnReject {
+  background-color: var(--applicant-button-reject) !important;
+  border: var(--applicant-button-reject) !important;
+  color: white;
+}
+
+.btnAccept:hover {
+  background-color: #4fb176 !important;
+  border: #4fb176 !important;
+  color: white;
+}
+
+.btnReject:hover {
+  background-color: #bc5353 !important;
+  border: #bc5353 !important;
+  color: white;
+}

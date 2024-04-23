@@ -1,9 +1,11 @@
-'use client'
+"use client";
 
 import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
 import { BrowseCard } from "./browseCard";
+import { ApplicantCard } from "./applicantCard";
+import App from "next/app";
 export function DashboardMenu() {
   const [activeButton, setActiveButton] = useState<string>("Matches");
   const handleButtonClick = (buttonName: string) => {
@@ -93,9 +95,13 @@ export function DashboardMenu() {
           </button>
         </div>
         <div>
-          {activeButton === "Matches" && (
+          {(activeButton === "Matches" || activeButton == "Applicants") && (
             <div className="d-flex">
-              <p className={styles.dmNumMatchesText}>TOTAL MATCHES:</p>
+              <p className={styles.dmNumMatchesText}>
+                {activeButton == "Matches"
+                  ? "TOTAL MATCHES:"
+                  : "TOTAL APPLICANTS:"}
+              </p>
               <div
                 className={`mx-3 border border-dark px-3 rounded-4 ${styles.dmNumberBubble}`}
               >
@@ -118,7 +124,7 @@ export function DashboardMenu() {
       <div
         className={`${styles.dmBody} ${
           activeButton === "Matches" ? styles.dmMatchesGrid : ""
-        }`}
+        } ${activeButton === "Applicants" ? styles.dmApplicantsGrid : ""}`}
       >
         {activeButton === "Matches" &&
           /* TO DO: future, may want to check for values existence before rendering for safety */
@@ -139,6 +145,15 @@ export function DashboardMenu() {
               displayName={match.displayName}
               program={match.program}
               tags={match.tags}
+            />
+          ))}
+
+        {activeButton == "Applicants" &&
+          matchData.map((match) => (
+            <ApplicantCard
+              key={match.id}
+              displayName={match.displayName}
+              program={match.program}
             />
           ))}
       </div>
