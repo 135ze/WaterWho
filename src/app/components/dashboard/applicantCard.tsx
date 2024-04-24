@@ -20,11 +20,11 @@ export function ApplicantCard(props: BrowseCardProp) {
         <div className={styles.cardImage}>
           <img src="https://pbs.twimg.com/media/FMOMOmGWQAQpapJ.jpg:large" />
         </div>
-        <div className={`ms-4 ${styles.applicantInfo}`}>
-          <h1 className={`${textStyles.cardPrimaryLine} m-0`}>
-            {props.displayName}
-          </h1>
-          <p className="mt-2"> {program} </p>
+        <div className={`ms-4 m-0 ${styles.applicantInfo}`}>
+          <div>
+            <h1 className={`fs-4 m-0`}>{props.displayName}</h1>
+            <p className="mt-1 fst-italic"> {program} </p>
+          </div>
           <div className="d-flex">
             <button
               type="button"
@@ -47,7 +47,15 @@ export function ApplicantCard(props: BrowseCardProp) {
           </div>
         </div>
       </div>
-      <div>Speed Note</div>
+      <div className={`mt-3 px-4 py-3 ${styles.noteContainer}`}>
+        <p className="fw-bold fst-italic"> Speed Note</p>
+        <div
+          className={`${styles.noteInnerContainer} p-4 d-flex  justify-content-center`}
+        >
+          Insert rizzy line here: blah blah blah blah blah blah blah blah blah
+          blah blah blah blah blah blah blah blah
+        </div>
+      </div>
     </div>
   );
 }

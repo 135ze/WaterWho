@@ -39,3 +39,16 @@
   border: #bc5353 !important;
   color: white;
 }
+
+.noteContainer {
+  background-color: var(--match-card-background);
+  border-radius: 25px;
+  height: auto;
+}
+
+.noteInnerContainer {
+  background-color: white;
+  width: 100%;
+  white-space: wrap;
+  border-radius: 25px;
+}
