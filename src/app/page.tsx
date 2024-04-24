@@ -30,14 +30,6 @@ export default function Home() {
                   <b>Log In</b>
                 </p>
               </button>
-              <button
-                className={`btn rounded ${styles.accountButton}`}
-                role="button"
-              >
-                <p className="m-1">
-                  <b>Sign Up</b>
-                </p>
-              </button>
             </div>
           </div>
         </div>
