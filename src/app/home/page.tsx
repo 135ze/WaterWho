@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
-import { Navbar } from "../components/navbar";
+import { Navbar } from "../components/navbar/navbar";
 import { api } from "~/trpc/react";
 import { SignIn, useUser } from "@clerk/nextjs";
 import styles from "./Account.module.scss";
-import { DashboardMenu } from "../components/dashboardmenu"
-import { Menu } from "../components/menu"
+import { DashboardMenu } from "../components/dashboard/dashboardmenu"
+import { Rankings } from "../components/ranking/rankings"
 
 export default function MainPage({ params }: { params: { id: string } }) {
   noStore();
@@ -20,7 +20,6 @@ export default function MainPage({ params }: { params: { id: string } }) {
   return (
     <div>
       <Navbar></Navbar>
-      {/* <Menu></Menu> */}
       <div className={styles.accountContainer}>
         <h1 className={styles.accountHeader}>Welcome back, John!</h1>
         {/* Add in user name later based on login*/}
@@ -35,7 +34,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
           >
             Dashboard
           </button>
-          <button
+          {/*<button
             onClick={() => handleButtonClick("Interviews")}
             className={`btn btn-primary ${styles.accountButton} ${
               activeButton === "Interviews"
@@ -44,7 +43,7 @@ export default function MainPage({ params }: { params: { id: string } }) {
             }`}
           >
             Interviews
-          </button>
+          </button>*/}
           <button
             onClick={() => handleButtonClick("Rankings")}
             className={`btn btn-primary ${styles.accountButton} ${
@@ -71,14 +70,14 @@ export default function MainPage({ params }: { params: { id: string } }) {
             <DashboardMenu></DashboardMenu>
           </div>
         )}
-        {activeButton === "Interviews" && (
+        {/*activeButton === "Interviews" && (
           <div>
-            <p>Interview Content HERE (TODO)</p>
+            <p>Interviews Content HERE (TODO)</p>
           </div>
-        )}
+        )*/}
         {activeButton === "Rankings" && (
           <div>
-            <p>Rankings Content HERE (TODO)</p>
+            <Rankings></Rankings>
           </div>
         )}
         {activeButton === "My Applications" && (

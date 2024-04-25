@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./BrowseCards.module.scss";
 import { Tag } from "./tag";
 

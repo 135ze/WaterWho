@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./Dashboard.module.scss";
 import React, { useState } from "react";
 import { MatchCard } from "./matchCard";
@@ -49,7 +51,7 @@ export function DashboardMenu() {
       tags: ["Certified_Gamer", "Simp", "FAANG", "SoundCloud_Rapper", "Cooks"],
     },
     {
-      id: 5,
+      id: 6,
       displayName: "LooooongName",
       age: 21,
       program: "Systems Design Engineering",

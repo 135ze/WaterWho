@@ -1,0 +1,104 @@
+.cpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cpHeader {
+  font-size: 22px;
+  margin: 0px;
+}
+.cpBox {
+  width: 100%;
+  background-color: var(--body-color-primary);
+  border-radius: 64px;
+  padding: 50px;
+}
+
+.cpBasicInfoContainer {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.cpInstructionText {
+  color: var(--text-color-secondary);
+  font-size: 20px;
+}
+.cpBasicInfoLeftContainer {
+  width: 50%;
+}
+.longInputBox {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+}
+.inputContainers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cpInstructionSubText {
+  color: var(--text-color-secondary);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.shortInputBox {
+  width: 50%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  margin: 10px 0px;
+}
+.buttonContainer {
+  display: flex;
+  margin-top: 50px;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.cpImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20em;
+  align-items: center;
+  background-color: var(--browse-card-background);
+  border-radius: 24px;
+  width: 60%;
+  min-width: 200px;
+  padding: 30px 20px;
+  cursor: pointer;
+}
+
+.cpRightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+  width: calc(50% - 20px);
+}
+
+.mark {
+  color: var(--round-button-inactive-background);
+}
+
+.cpPhotoInstructions {
+  font-weight: 600;
+}
+
+.imgInputBox {
+  width: 100%;
+}
+
+.cpNextButton {
+  font-size: 20px;
+  font-weight: normal;
+}
+.defaultSelect {
+  color: grey;
+}

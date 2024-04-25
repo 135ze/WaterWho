@@ -6,7 +6,7 @@ import Logo from "./assets/logo.png";
 import Dropdown from "./assets/dropdown.png";
 import Image from "next/image";
 // import Link from "next/link";
-// import { Navbar } from "./components/navbar";
+// import { Navbar } from "./components/navbar/navbar";
 // import { api } from "~/trpc/react";
 // import { SignIn, useUser } from "@clerk/nextjs";
 
