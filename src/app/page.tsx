@@ -22,14 +22,15 @@ export default function Home() {
           </a>
           <div className="d-flex flex-row-reverse">
             <div className="btn-group">
-              <button
+              <a
+                href = "/signin"
                 className={`btn rounded ${styles.accountButton}`}
                 role="button"
               >
                 <p className="m-1">
                   <b>Log In</b>
                 </p>
-              </button>
+              </a>
             </div>
           </div>
         </div>
