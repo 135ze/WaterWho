@@ -44,22 +44,6 @@ export default function OnboardingComplete(props: CompleteProps) {
         </section>
       </div>
     </main>
-    <div className={styles.buttonContainer}>
-        <button
-          type="button"
-          className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-          onClick={() => handleBack()}
-        >
-          &laquo; Back
-        </button>
-        <button
-            type="button"
-            className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
-            onClick={() => router.push('/home')}
-          >
-            Next &raquo;
-          </button>
-      </div>
     </>
   );
 }

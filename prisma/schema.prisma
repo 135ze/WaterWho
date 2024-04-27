@@ -10,7 +10,7 @@ datasource db {
 
 
 model UserProfile {
-    UserID Int @id 
+    UserID String @id 
     Name String
     DateOfBirth String
     Gender String
@@ -38,20 +38,20 @@ model UserProfile {
 
 model Documents {
     documentID Int @id @default(autoincrement())
-    userID Int
+    userID String
     link String
 }
 
 model Images {
-    imageOwnerID Int 
+    imageOwnerID String 
     imageType Int
     imageLink String
     @@unique([imageOwnerID, imageType, imageLink])
 }
 
 model Applications {
-    applicantID Int
-    receiverID Int
+    applicantID String
+    receiverID String
     resume String
     coverLetter String
     letterOfRecommendation String
@@ -60,21 +60,21 @@ model Applications {
 }
 
 model Relationship {
-    userOneID Int
-    userTwoID Int
+    userOneID String
+    userTwoID String
     relationshipStatus Int @default(0)
     @@unique([userOneID, userTwoID])
 }
 
 model Socials {
-    userId Int
+    userId String
     socialType Int
     socialLink String
     @@unique([userId, socialType])
 }
 
 model Notifications {
-    receiverID Int
+    receiverID String
     notificationID Int @id @default(autoincrement())
     title String
     message String 

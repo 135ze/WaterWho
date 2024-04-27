@@ -8,7 +8,7 @@ export const profileRouter = createTRPCRouter({
 
     upsertProfile: privateProcedure
     .input(z.object({
-      UserID: z.number(), 
+      UserID: z.string(), 
       Name: z.string(),
       DateOfBirth: z.string(),
       Gender: z.string(),
@@ -92,7 +92,7 @@ export const profileRouter = createTRPCRouter({
     }),
 
     getProfile: privateProcedure
-    .input(z.object({UserID: z.number()}))
+    .input(z.object({UserID: z.string()}))
     .query(async ({ctx, input}) => {
       const ret = await ctx.db.userProfile.findFirstOrThrow ({ 
         where: { UserID: input.UserID }
@@ -101,7 +101,7 @@ export const profileRouter = createTRPCRouter({
     }),
 
     getMatches: privateProcedure
-    .input(z.object({UserID: z.number()}))
+    .input(z.object({UserID: z.string()}))
     .query(async ({ctx, input}) => {
         const ret = await ctx.db.applications.findMany ({
           where: { applicantID: input.UserID,
