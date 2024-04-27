@@ -45,6 +45,9 @@ body {
   --tag-six-colour:#FFC4D9;
   /* CS Nerd */
   --tag-seven-colour:#FFD29D; 
+
+  --applicant-button-accept: #61D890;
+  --applicant-button-reject: #D25E5E;
 }
 
 a {
@@ -94,7 +97,6 @@ a {
 .btn-tertiary:hover {
   background-color: var(--browse-card-button);
 }
-
 
 .hover {
   cursor: pointer
