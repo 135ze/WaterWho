@@ -10,7 +10,7 @@ export const profileRouter = createTRPCRouter({
     .input(z.object({
       UserID: z.string(), 
       Name: z.string(),
-      DateOfBirth: z.string(),
+      DateOfBirth: z.date(),
       Gender: z.string(),
       Religion: z.string(),
       SexualOrientation: z.string(),
