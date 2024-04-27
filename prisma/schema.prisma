@@ -15,6 +15,7 @@ model UserProfile {
     DateOfBirth String
     Gender String
     SexualOrientation String
+    Religion String
     Height Int
     School String
     YearAndMajor String
