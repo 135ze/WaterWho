@@ -121,7 +121,7 @@ export default function Home() {
                         className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
                         onClick={() => {
                           if (user.user?.id) {
-                            upsert({UserID: user.user?.id, Name: data.displayName, DateOfBirth: data.birthDate, Gender: data.gender, Religion: data.religion, 
+                            upsert({UserID: user.user?.id, Name: data.displayName, DateOfBirth: new Date(), Gender: data.gender, Religion: data.religion, 
                               SexualOrientation: data.sexualOrientation, Height: 1, School: data.university, YearAndMajor: data.sexualOrientation, 
                               Location: data.location, CurrentStudyTerm: data.studyTerm, Mbti: 1, Tags: data.tags, PhoneNumber: data.phoneNumber, 
                               Discord: data.discordUsername, Instagram: data.instagramUsername, PersonalDescription: data.employer, RelationshipStyle: data.position,

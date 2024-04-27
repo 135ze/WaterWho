@@ -12,7 +12,7 @@ datasource db {
 model UserProfile {
     UserID String @id 
     Name String
-    DateOfBirth String
+    DateOfBirth DateTime
     Gender String
     SexualOrientation String
     Religion String
