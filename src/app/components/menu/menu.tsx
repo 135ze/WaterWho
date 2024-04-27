@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from 'react';
-import styles from "./Menu.module.css"
+import styles from "./Menu.module.scss"
 import Image from "next/image";
 import menuImage from "../../assets/menu.png";
 import cross from "../../assets/close.png";

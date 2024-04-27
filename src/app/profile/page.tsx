@@ -9,8 +9,12 @@ import { SignIn,  useUser } from "@clerk/nextjs";
 import { Navbar } from "../components/navbar/navbar";
 
 
+
+
+
 export default function Home() {
   noStore();
+
 
   return (
     <div>

@@ -31,6 +31,8 @@ body {
   --menu-background:  #D9D9D9;
   --menu-tab:  #437FC5;
   --dark-blue-text: #2F527B;
+  --landing-button-inactive-background: white;
+  --landing-button-active-background: #67A3EB;
   /* Simp */
   --tag-one-colour: #E3F4FC;
   /* Cook */
