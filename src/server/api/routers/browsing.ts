@@ -36,10 +36,10 @@ export const profileRouter = createTRPCRouter({
 
         let ret
         if (user.SexualOrientation == 'bisexual' || user.SexualOrientation == 'pansexual') {
-            let filler = await ctx.db.userProfile.findMany ({ 
+            const filler = await ctx.db.userProfile.findMany ({ 
                 where: { Gender: user.Gender, SexualOrientation: 'homosexual' }
             })
-            let fillerTwo = await ctx.db.userProfile.findMany ({ 
+            const fillerTwo = await ctx.db.userProfile.findMany ({ 
                 where: { Gender: user.Gender, SexualOrientation: 'bisexual' }
             })
             let fillerThree;
