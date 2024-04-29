@@ -9,7 +9,7 @@ import styles from "./Account.module.scss";
 import { DashboardMenu } from "../components/dashboard/dashboardmenu"
 import { Rankings } from "../components/ranking/rankings"
 
-export default function MainPage({ params }: { params: { id: string } }) {
+export default function MainPage({ params }: { params: { id: string | undefined } }) {
   noStore();
 
   const [activeButton, setActiveButton] = useState<string>("Dashboard");
