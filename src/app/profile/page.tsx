@@ -16,7 +16,7 @@ export default function Home() {
   noStore();
 
   const user = useUser()
-  //userProfile will haev the entire user's profile information. 
+  //userProfile will have the entire user's profile information. 
   let userProfile
   if (user.user?.id) {
     userProfile = api.profile.getProfile.useQuery({UserID: user.user?.id}).data
