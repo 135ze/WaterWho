@@ -93,6 +93,14 @@ const locations = [
   "Other (outside of Canada)",
   "Piss middle of nowhere",
 ];
+const sexualOrientations = [
+  "straight",
+  "gay",
+  "bisexual",
+  "pansexual",
+  "other",
+];
+const gender = ["male", "female", "other"];
 
 export default function BasicInfo(props: {
   handleNext: () => void;
@@ -168,10 +176,14 @@ export default function BasicInfo(props: {
                 />
                 <InputBox
                   placeholder="Gender"
+                  type={"select"}
+                  options={gender}
                   onChange={(e) => setData({ ...data, gender: e.target.value })}
                 />
                 <InputBox
                   placeholder="Sexual Orientation"
+                  type={"select"}
+                  options={sexualOrientations}
                   onChange={(e) =>
                     setData({ ...data, sexualOrientation: e.target.value })
                   }
