@@ -1,47 +1,59 @@
-'use client'
+"use client";
 
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
-
 import { api } from "~/trpc/react";
 import styles from "./Account.module.scss";
-import { SignIn,  useUser } from "@clerk/nextjs";
+import { SignIn, useUser } from "@clerk/nextjs";
 import { Navbar } from "../components/navbar/navbar";
-
-
-
-
+import { PostingInfoCard } from "../components/posting-info-card/PostingInfoCard";
 
 export default function Home() {
   noStore();
 
-  const user = useUser()
-  //userProfile will haev the entire user's profile information. 
-  let userProfile
+  const user = useUser();
+  //userProfile will haev the entire user's profile information.
+  let userProfile;
   if (user.user?.id) {
-    userProfile = api.profile.getProfile.useQuery({UserID: user.user?.id}).data
+    userProfile = api.profile.getProfile.useQuery({
+      UserID: user.user?.id,
+    }).data;
   }
 
-  console.log({userProfile})
+  console.log({ userProfile });
   return (
     <div>
       <Navbar></Navbar>
       <div className={styles.firstSectionContainer}>
         <div className={styles.profilePic}></div>
         <span className={styles.description}>
-          <div>wassup</div>
-          <div>how you doin</div>
+          <div>posting id - applicant name</div>
+          <div>grade + program @ sum university</div>
           <button
             //onClick={() => handleButtonClick("Interviews")}
             className={`btn btn-primary ${styles.applyButton}`}
-          >Apply</button>
+          >
+            Apply
+          </button>
           <button
             //onClick={() => handleButtonClick("Interviews")}
             className={`btn btn-primary ${styles.shortListButton}`}
-          >Shortlist</button>
+          >
+            Shortlist
+          </button>
         </span>
       </div>
+
       <div className={styles.postingInformation}>Posting Information</div>
+      <div className={styles.gridContainer}>
+        <PostingInfoCard displayText={"Male"} />
+        <PostingInfoCard displayText={"Straight"} />
+        <PostingInfoCard displayText={"22 Years Old"} />
+        <PostingInfoCard displayText={"Study Term"} />
+        <PostingInfoCard displayText={"Waterloo"} />
+        <PostingInfoCard displayText={"6'4"} />
+      </div>
+
       <div className={styles.postingInformation}>Posting Details</div>
       <div className={styles.postingInformation}>Applicant Requirements</div>
       <div className={styles.postingInformation}>Applicant Procedure</div>

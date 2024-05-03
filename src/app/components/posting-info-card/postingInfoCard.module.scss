@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #B3D6FF;
+  padding: 1.2vh 1.2vh;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.checkmark {
+  height: 3vw;
+  width: auto;
+  min-height: 40px;
+  max-height: 100px;
+  padding-right: 10px;
+}
+
+.displayText {
+  font-size: clamp(6px, 3.5vh, 16px);
+  color: black;
+  padding-right: 10px;
+}
