@@ -4,8 +4,10 @@
 /* Import Bootstrap styles */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-/* Add your custom styles below */
+/* Import Swiper JS */
+@import 'swiper/swiper-bundle.css';
 
+/* Add your custom styles below */
 html,
 body {
   padding: 0;

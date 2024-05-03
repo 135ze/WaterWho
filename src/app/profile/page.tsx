@@ -45,7 +45,7 @@ export default function Home() {
       </div>
 
       <div className={styles.postingInformation}>Posting Information</div>
-      <div className={styles.gridContainer}>
+      <div className={styles.tagsContainer}>
         <PostingInfoCard displayText={"Male"} />
         <PostingInfoCard displayText={"Straight"} />
         <PostingInfoCard displayText={"22 Years Old"} />
@@ -55,6 +55,36 @@ export default function Home() {
       </div>
 
       <div className={styles.postingInformation}>Posting Details</div>
+      <div className={styles.postingDetailsContainer}>
+        <div className={styles.imageCarouselWrapper}>
+          <div className={styles.imageCarousel}></div>
+        </div>
+        <div className={styles.descriptionWrapper}>
+          <div className={styles.descriptionHeader}>About the Employer</div>
+          <div className={styles.descriptionDetails}>
+            I am a capybara, and I like to eat grass. Omnomnomnomnomnom. I also
+            enjoy prancing through the fields and indulging in organic produce.
+          </div>
+        </div>
+        <div className={styles.descriptionWrapper}>
+          <div className={styles.descriptionHeader}>
+            Benefits & Compensation
+          </div>
+          <div className={styles.descriptionDetails}>
+            I will cook you a meal 3x a week. I am also DTF whenever you want.
+          </div>
+        </div>
+        <div className={styles.descriptionWrapper}>
+          <div className={styles.descriptionHeader}>
+            Position Start Date & Duration
+          </div>
+          <div className={styles.descriptionDetails}>
+            As soon as possible. Long term commitment (serious applicants
+            only!!!)
+          </div>
+        </div>
+      </div>
+
       <div className={styles.postingInformation}>Applicant Requirements</div>
       <div className={styles.postingInformation}>Applicant Procedure</div>
     </div>
