@@ -31,7 +31,11 @@ export default function Home() {
         <div className={styles.profilePic}></div>
         <span className={styles.description}>
           {/* we don't have posting id's i dont think */}
-          <div>posting id - {userProfile?.firstName ? userProfile?.firstName : 'firstname'} {userProfile?.lastName ? userProfile?.lastName : 'surname'}</div>
+          {/* <div>posting id - {userProfile?.firstName ? userProfile?.firstName : 'firstname'} {userProfile?.lastName ? userProfile?.lastName : 'surname'}</div>
+           */}
+           <div>
+              posing id - firstName lastName
+           </div>
           <div> year + program @ sum university</div>
           <button
             //onClick={() => handleButtonClick("Interviews")}
