@@ -44,7 +44,7 @@ export default function Home() {
     dealbreakers: "",
     expectations: "",
     traits: "",
-    photos: [],
+    photos: [] as File[],
   });
 
   const confirmData = (newData: object) => {
@@ -126,7 +126,7 @@ export default function Home() {
                               Location: data.location, CurrentStudyTerm: data.studyTerm, Mbti: 1, Tags: data.tags, PhoneNumber: data.phoneNumber, 
                               Discord: data.discordUsername, Instagram: data.instagramUsername, PersonalDescription: data.employer, RelationshipStyle: data.position,
                               BenefitsAndCompensation: data.benefits, Interests: data.interests, DealBreakers: data.dealbreakers, DesiredTraits: data.traits, 
-                              AccountCreatedDate: new Date()
+                              AccountCreatedDate: new Date(), 
                             })
                           }
                           router.push("/profile")
@@ -135,7 +135,6 @@ export default function Home() {
                         Submit &raquo;
                       </button>
               </div>
-
           </div>
         )}
       </main>

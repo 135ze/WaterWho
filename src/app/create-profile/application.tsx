@@ -73,6 +73,7 @@ export default function OnboardingApplication(props: {
     dealbreakers: "",
     expectations: "",
     traits: "",
+    photos: [] as File[],
   });
   const [photos, setPhotos] = useState<File[]>([]);
   const [expandedImage, setExpandedImage] = useState<File | undefined>(undefined);
@@ -226,7 +227,7 @@ export default function OnboardingApplication(props: {
           className={`${buttonStyles.cpNextButton} px-4 rounded-3 btn btn-primary mx-3`}
           onClick={() => {
             handleNext();
-            sendData({ ...data, photos });
+            sendData({ ...data, photos: photos });
           }}
         >
           Next &raquo;
