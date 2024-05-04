@@ -7,6 +7,9 @@ import styles from "./Account.module.scss";
 import { SignIn, useUser } from "@clerk/nextjs";
 import { Navbar } from "../components/navbar/navbar";
 import { PostingInfoCard } from "../components/posting-info-card/PostingInfoCard";
+import Check2 from "../assets/IconCardCheck.png";
+import Speech from "../assets/IconCardSpeech.png";
+import Image from "next/image";
 
 export default function Home() {
   noStore();
@@ -27,8 +30,9 @@ export default function Home() {
       <div className={styles.firstSectionContainer}>
         <div className={styles.profilePic}></div>
         <span className={styles.description}>
-          <div>posting id - applicant name</div>
-          <div>grade + program @ sum university</div>
+          {/* we don't have posting id's i dont think */}
+          <div>posting id - {userProfile?.firstName ? userProfile?.firstName : 'firstname'} {userProfile?.lastName ? userProfile?.lastName : 'surname'}</div>
+          <div> year + program @ sum university</div>
           <button
             //onClick={() => handleButtonClick("Interviews")}
             className={`btn btn-primary ${styles.applyButton}`}
@@ -86,7 +90,45 @@ export default function Home() {
       </div>
 
       <div className={styles.postingInformation}>Applicant Requirements</div>
+      <div className={styles.sectionSubheader}>Ideal candidates must have the following qualifications:</div>
+      <div className={styles.applicantRequirementsContainer}>
+        <div className={styles.requirementWrapper}>
+          <Image src={Check2} alt="Check" className={styles.checkIcon} />
+          <div className={styles.requirementHeader}>Relationship Expectations</div>
+          <div className={styles.requirementDetails}>
+            meets up for dates once a week, is loyal, likes cuddles {"<3"}
+          </div>
+        </div>
+        <div className={styles.requirementWrapper}>
+          <Image src={Check2} alt="Check" className={styles.checkIcon} />
+          <div className={styles.requirementHeader}>Interests</div>
+          <div className={styles.requirementDetails}>
+            league, kpop, taylor swift
+          </div>
+        </div>
+        <div className={styles.requirementWrapper}>
+          <Image src={Check2} alt="Check" className={styles.checkIcon} />
+          <div className={styles.requirementHeader}>Desired Traits</div>
+          <div className={styles.requirementDetails}>
+            6 pack, 6 feet, 6 figure job plz
+          </div>
+        </div>
+        <div className={styles.requirementWrapper}>
+          <Image src={Check2} alt="Check" className={styles.checkIcon} />
+          <div className={styles.requirementHeader}>Dealbreakers</div>
+          <div className={styles.requirementDetails}>
+            smoking and doing drugs are big nonos!
+          </div>
+        </div>
+      </div>
+
       <div className={styles.postingInformation}>Applicant Procedure</div>
+      <div className={styles.applicantProcedureWrapper}>
+        <Image src={Speech} alt="Speech Bubble" className={styles.speechIcon} />
+        <div className={styles.applicantProcedureDetails}>
+          Dating term history and letter of intent required!
+        </div>
+      </div>
     </div>
   );
 }
