@@ -1,6 +1,11 @@
 "use client";
 
-import React, { useState, useCallback, ChangeEvent } from "react";
+import React, {
+  useState,
+  useCallback,
+  useEffect,
+  ChangeEvent,
+} from "react";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
 import styles from "./Basic-Info.module.scss";
@@ -9,14 +14,20 @@ import imageIcon from "../assets/image-icon.png";
 
 function InputBox(props: {
   placeholder: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeSelect?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   type?: string; // default type will be reg. input box
   options?: string[];
 }) {
-  const { placeholder, onChange } = props;
+  const { placeholder, onChange, onChangeSelect } = props;
   const [value, setValue] = useState<string>("");
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    console.log(event.target.value);
     setValue(event.target.value);
+    console.log(onChangeSelect)
+    if (onChangeSelect) {
+      onChangeSelect(event);
+    }
   };
 
   if (props.type === "select") {
@@ -37,6 +48,14 @@ function InputBox(props: {
           </option>
         ))}
       </select>
+    );
+  } else if (props.type === "date") {
+    return (
+      <input
+        className={styles.longInputBox}
+        type="date"
+        onChange={onChange}
+      ></input>
     );
   } else {
     return (
@@ -61,24 +80,28 @@ const Terms = [
   "5B",
   "Other",
 ];
-const mbtiTypes = [
-  "ISTJ",
-  "ISFJ",
-  "INFJ",
-  "INTJ",
-  "ISTP",
-  "ISFP",
-  "INFP",
-  "INTP",
-  "ESTP",
-  "ESFP",
-  "ENFP",
-  "ENTP",
-  "ESTJ",
-  "ESFJ",
-  "ENFJ",
-  "ENTJ",
-];
+enum mbtiTypes {
+  ISTJ,
+  ISFJ,
+  INFJ,
+  INTJ,
+  ISTP,
+  ISFP,
+  INFP,
+  INTP,
+  ESTP,
+  ESFP,
+  ENFP,
+  ENTP,
+  ESTJ,
+  ESFJ,
+  ENFJ,
+  ENTJ,
+}
+const mbtiArray = Object.keys(mbtiTypes).filter((key) => isNaN(Number(key)));
+
+console.log(mbtiArray);
+
 const locations = [
   "Toronto",
   "Waterloo",
@@ -110,7 +133,7 @@ export default function BasicInfo(props: {
 
   const [data, setData] = useState({
     displayName: "",
-    birthDate: "",
+    birthDate: new Date(),
     location: "",
     gender: "",
     sexualOrientation: "",
@@ -119,13 +142,17 @@ export default function BasicInfo(props: {
     university: "",
     yearAndMajor: "",
     studyTerm: "",
-    mbti: "",
+    mbti: 0,
     tags: "",
     phoneNumber: "",
     discordUsername: "",
     instagramUsername: "",
   });
   const [photo, setPhoto] = useState<File | undefined>(undefined);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     console.log(acceptedFiles);
@@ -162,29 +189,30 @@ export default function BasicInfo(props: {
               <div className={`${styles.inputContainers}`}>
                 <InputBox
                   placeholder="Birth Date"
+                  type={"date"}
                   onChange={(e) =>
-                    setData({ ...data, birthDate: e.target.value })
+                    setData({ ...data, birthDate: new Date(e.target.value) })
                   }
                 />
                 <InputBox
                   placeholder="Location"
                   type={"select"}
                   options={locations}
-                  onChange={(e) =>
-                    setData({ ...data, location: e.target.value })
-                  }
+                  onChangeSelect={(e) => {
+                    setData({ ...data, location: e.target.value });
+                  }}
                 />
                 <InputBox
                   placeholder="Gender"
                   type={"select"}
                   options={gender}
-                  onChange={(e) => setData({ ...data, gender: e.target.value })}
+                  onChangeSelect={(e) => {setData({ ...data, gender: e.target.value })}}
                 />
                 <InputBox
                   placeholder="Sexual Orientation"
                   type={"select"}
                   options={sexualOrientations}
-                  onChange={(e) =>
+                  onChangeSelect={(e) =>
                     setData({ ...data, sexualOrientation: e.target.value })
                   }
                 />
@@ -214,15 +242,20 @@ export default function BasicInfo(props: {
                   type={"select"}
                   options={Terms}
                   placeholder="Study Term"
-                  onChange={(e) =>
+                  onChangeSelect={(e) =>
                     setData({ ...data, studyTerm: e.target.value })
                   }
                 />
                 <InputBox
                   placeholder="MBTI"
                   type={"select"}
-                  options={mbtiTypes}
-                  onChange={(e) => setData({ ...data, mbti: e.target.value })}
+                  options={mbtiArray}
+                  onChangeSelect={(e) =>
+                    setData({
+                      ...data,
+                      mbti: mbtiArray.indexOf(e.target.value),
+                    })
+                  }
                 />
               </div>
               <InputBox
